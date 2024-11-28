@@ -1,0 +1,11 @@
+.cart{
+    position: fixed;
+    background: linear-gradient(to bottom, #00ff00 0%, #99ffcc 100%);
+    box-shadow:0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    width:100%;
+    text-align: center;
+    font-size: 30px;
+    color: black;
+    text-decoration: none;
+}
