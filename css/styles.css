@@ -9,6 +9,35 @@ header {
 
 }
 
+
+button.add,
+button.remove {
+    border: none;
+    font-size: 20px;
+    background-color: white;
+}
+
+.remove {
+    color: red
+}
+
+.add:hover {
+    color: rgb(157, 146, 146);
+}
+
+.remove:hover {
+    color: rgb(233, 189, 189);
+}
+
+.remove:active {
+    color: red;
+}
+
+
+.add:active {
+    color: rgb(37, 35, 35);
+}
+
 .cart{
     position: fixed;
     background: linear-gradient(to bottom, #00ff00 0%, #99ffcc 100%);
@@ -29,4 +58,5 @@ header {
 }
 .OneOne{
     width: 100px;
+
 }
