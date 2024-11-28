@@ -1,3 +1,14 @@
+header {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb(47, 45, 45);
+    color: #eee;
+    width: 100%;
+    padding: 3px;
+    font-size: 12px;
+    text-align: center;
+
+}
+
 .cart{
     position: fixed;
     background: linear-gradient(to bottom, #00ff00 0%, #99ffcc 100%);
