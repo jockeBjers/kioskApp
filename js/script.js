@@ -1,4 +1,26 @@
-//Script for adding & removing items (Need fixing when other parts are done)
+const products = [
+    { id: 1, name: 'Celsius', price: 20.00 },
+    { id: 2, name: 'Arboga 10.2 % Vol', price: 2.99 },
+    { id: 3, name: 'Coca Cola', price: 10.00 },
+    { id: 4, name: 'Coca Cola Zero', price: 10.00 },
+    { id: 5, name: 'Dr Pepper', price: 10.00 },
+    { id: 6, name: 'Fanta', price: 10.00 },
+    { id: 7, name: "Jack Daniel's Coca Cola", price: 75.00 },
+    { id: 8, name: 'Red Bull', price: 25.00 },
+    { id: 9, name: 'Zeunerts Julmust', price: 30.00 },
+    { id: 10, name: 'Zeunerts Julmust Sockerfri', price: 30.00 },
+    { id: 11, name: 'Cheetos Cheddar Jalapeño', price: 40.00 },
+    { id: 12, name: 'Dumle Snacks Mint', price: 35.00 },
+    { id: 13, name: 'Kina Salty Snacks', price: 39.00 },
+    { id: 14, name: 'Kina Snacks', price: 39.00 },
+    { id: 15, name: 'Ahlgrens Bilar', price: 21.90 },
+    { id: 16, name: 'Sweet Chilimayo Chips', price: 40.00 },
+    { id: 17, name: 'gooh! Köttbullar', price: 55.90 },
+    { id: 18, name: 'gooh! Lasagnette', price: 55.90 },
+    { id: 19, name: 'Wasa French Herbs', price: 15.00 },
+    { id: 20, name: 'Wasa Sourcream & Onion', price: 15.00 },
+    { id: 21, name: 'Wasa Tomato Basil', price: 15.00 }
+];
 
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
@@ -17,3 +39,4 @@ function removeFromCart(productID) {
         alert(`${removedProduct.name} removed from the cart!`)
     }
 }
+
