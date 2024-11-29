@@ -42,14 +42,13 @@ function removeFromCart(productID) {
         alert(`${productName} is not in the cart!`);
         return;
     }
-        const removedProduct = cart.splice(productIndex, 1)[0];
-        localStorage.setItem('cart', JSON.stringify(cart));
-        alert(`${removedProduct.name} removed from the cart!`)
-        updateTotalValue();
-        updateTotalItems();
-    }
-
+    const removedProduct = cart.splice(productIndex, 1)[0];
+    localStorage.setItem('cart', JSON.stringify(cart));
+    alert(`${removedProduct.name} removed from the cart!`)
+    updateTotalValue();
+    updateTotalItems();
 }
+
 
 
 function helpPopUp() {
@@ -59,16 +58,16 @@ function closePopUp() {
     document.getElementById("popup").style.display = "none";
 }
 
-    function updateTotalValue() {
-        const total = cart.reduce((sum, product) => sum + product.price, 0);
-        document.getElementById('totalValue').textContent = `Total: ${total.toFixed(2)} Kr`;
-    }
-    function updateTotalItems() {
-        const totalItems = cart.length;
-        document.getElementById('totalItems').textContent = `Antal: ${totalItems} st`;
-    }
-    document.addEventListener('DOMContentLoaded', () => {
-        updateTotalValue();
-        updateTotalItems();
-    });
+function updateTotalValue() {
+    const total = cart.reduce((sum, product) => sum + product.price, 0);
+    document.getElementById('totalValue').textContent = `Total: ${total.toFixed(2)} Kr`;
+}
+function updateTotalItems() {
+    const totalItems = cart.length;
+    document.getElementById('totalItems').textContent = `Antal: ${totalItems} st`;
+}
+document.addEventListener('DOMContentLoaded', () => {
+    updateTotalValue();
+    updateTotalItems();
+});
 
