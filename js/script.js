@@ -40,3 +40,11 @@ function removeFromCart(productID) {
     }
 }
 
+
+function helpPopUp() {
+    document.getElementById("popup").style.display = "flex";
+}
+function closePopUp() {
+    document.getElementById("popup").style.display = "none";
+}
+
