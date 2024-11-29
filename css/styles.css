@@ -6,17 +6,83 @@ header {
     background-color: rgb(47, 45, 45);
     color: #eee;
     width: 100%;
-    padding: 3px;
+    padding: 10px 20px;
     font-size: 12px;
     text-align: center;
+    display: flex;
+    justify-content: space-around;
+}
 
+header h1 {
+    flex-grow: 1;
+}
+
+#popup h2 {
+    text-align: center
+}
+
+#help {
+    color: #eee;
+    background-color: rgb(47, 45, 45);
+    border: none;
+    font-size: 16px;
+    font-weight: bold;
+    margin-right: 50px;
+}
+
+
+#help:hover {
+    color: rgba(162, 135, 135, 0.166);
+}
+
+#help:active {
+
+    color: rgb(28, 17, 17, 0.166);
+
+}
+
+
+#closeBtn:hover {
+    color: rgb(255, 0, 0, 0.373);
+}
+
+#closeBtn:active {
+    color: rgba(64, 6, 6, 0.373);
+}
+
+
+#closeBtn {
+    border: none;
+    background-color: rgb(47, 45, 45);
+    color: red;
+    font-size: 15px;
+
+}
+
+
+#popup {
+    display: none;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    right: 40px;
+    width: 300px;
+    height: 450px;
+    padding: 15px;
+    z-index: 9;
+    background-color: rgb(47, 45, 45);
+    color: #eee;
+    text-align: start;
+    line-height: 1.7;
+    font-size: 12px;
+    border-radius: 5px;
 }
 
 
 button.add,
 button.remove {
     border: none;
-    font-size: 20px;
+    font-size: 23px;
     background-color: white;
 }
 

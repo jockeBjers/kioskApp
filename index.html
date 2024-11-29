@@ -10,16 +10,34 @@
 
   <body>
     <header>
-      <h1>Student Kiosk</h1>
+
+        <h1>Student Kiosk</h1>
+         <button id="help" onclick="helpPopUp()">?</button>
+      
+        <div id="popup">
+            <h2>How to</h2>
+            <ol>
+                <li>Create an Account</li>
+                <li> First time? "Sign Up" to create an account. Once your account is created, log in using your email and password.</li>
+                <li> Explore the kiosk’s menu within the app. You can navigate through categories like snacks, beverages, or other items available for purchase.</li>
+                <li> Add items to your cart by selecting them and tapping "+" and remove by typing "-".</li>
+                <li>When you’ve selected all the items you want, tap on your cart icon to review your order.</li>
+                <li>Make sure everything is correct, then tap "Checkout".</li>
+                <li>Select Payment Method</li>
+                <li>Pick Up Your Items</li>
+                </ol>
+                <button id="closeBtn" onclick="closePopUp()">Close</button>
+                
     </header>
+   
+        
 
     <!--Bilderna har olika aspekt-ratio därav klassnamn för att ha olika bredd i css. Lämnar dom här så länge så den som ska ha dom kan bara plocka :) -->
 
     <div class="Celsius">
-      <img src="./Images/Celsius.png" alt="" class="OneTwo" />
+   <img src="./Images/Celsius.png" alt="" class="OneTwo" />
       <p class="itemDescription">Celsius</p>
       <p class="Pris">20.00 Kr</p>
-
       <button class="add" onclick="addToCart(1)">+</button>
       <button class="remove" onclick="removeFromCart(1)">-</button>
     </div>

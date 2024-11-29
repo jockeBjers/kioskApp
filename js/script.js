@@ -48,6 +48,17 @@ function removeFromCart(productID) {
         updateTotalValue();
         updateTotalItems();
     }
+
+}
+
+
+function helpPopUp() {
+    document.getElementById("popup").style.display = "flex";
+}
+function closePopUp() {
+    document.getElementById("popup").style.display = "none";
+}
+
     function updateTotalValue() {
         const total = cart.reduce((sum, product) => sum + product.price, 0);
         document.getElementById('totalValue').textContent = `Total: ${total.toFixed(2)} Kr`;
@@ -60,3 +71,4 @@ function removeFromCart(productID) {
         updateTotalValue();
         updateTotalItems();
     });
+
