@@ -19,7 +19,8 @@ const products = [
     { id: 18, name: 'gooh! Lasagnette', price: 55.90 },
     { id: 19, name: 'Wasa French Herbs', price: 15.00 },
     { id: 20, name: 'Wasa Sourcream & Onion', price: 15.00 },
-    { id: 21, name: 'Wasa Tomato Basil', price: 15.00 }
+    { id: 21, name: 'Wasa Tomato Basil', price: 15.00 },
+    { id: 22, name: 'Åsna', price: 8599.00 }
 ];
 
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
