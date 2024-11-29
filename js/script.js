@@ -29,6 +29,7 @@ function addToCart(productID) {
     cart.unshift(product);
     localStorage.setItem('cart', JSON.stringify(cart));
     alert(`${product.name} added to the cart!`)
+    updateTotalValue();
 }
 
 function removeFromCart(productID) {
@@ -42,4 +43,12 @@ function removeFromCart(productID) {
         const removedProduct = cart.splice(productIndex, 1)[0];
         localStorage.setItem('cart', JSON.stringify(cart));
         alert(`${removedProduct.name} removed from the cart!`)
+        updateTotalValue();
     }
+    function updateTotalValue() {
+        const total = cart.reduce((sum, product) => sum + product.price, 0);
+        document.getElementById('totalValue').textContent = `Total: ${total.toFixed(2)} Kr`;
+    }
+    document.addEventListener('DOMContentLoaded', () => {
+        updateTotalValue();
+    });
