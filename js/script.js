@@ -31,6 +31,7 @@ function addToCart(productID) {
     localStorage.setItem('cart', JSON.stringify(cart));
     alert(`${product.name} added to the cart!`)
     updateTotalValue();
+    updateTotalItems();
 }
 
 function removeFromCart(productID) {
@@ -45,11 +46,17 @@ function removeFromCart(productID) {
         localStorage.setItem('cart', JSON.stringify(cart));
         alert(`${removedProduct.name} removed from the cart!`)
         updateTotalValue();
+        updateTotalItems();
     }
     function updateTotalValue() {
         const total = cart.reduce((sum, product) => sum + product.price, 0);
         document.getElementById('totalValue').textContent = `Total: ${total.toFixed(2)} Kr`;
     }
+    function updateTotalItems() {
+        const totalItems = cart.length;
+        document.getElementById('totalItems').textContent = `Antal: ${totalItems} st`;
+    }
     document.addEventListener('DOMContentLoaded', () => {
         updateTotalValue();
+        updateTotalItems();
     });
