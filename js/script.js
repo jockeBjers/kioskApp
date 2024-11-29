@@ -33,10 +33,13 @@ function addToCart(productID) {
 
 function removeFromCart(productID) {
     const productIndex = cart.findIndex(p => p.id === productID);
-    if (productIndex !== -1) {
+    if (productIndex === -1) {
+        const product = products.find(p => p.id === productID);
+        const productName = product ? product.name : 'This product';
+        alert(`${productName} is not in the cart!`);
+        return;
+    }
         const removedProduct = cart.splice(productIndex, 1)[0];
         localStorage.setItem('cart', JSON.stringify(cart));
         alert(`${removedProduct.name} removed from the cart!`)
     }
-}
-
