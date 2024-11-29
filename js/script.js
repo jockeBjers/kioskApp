@@ -19,7 +19,8 @@ const products = [
     { id: 18, name: 'gooh! Lasagnette', price: 55.90 },
     { id: 19, name: 'Wasa French Herbs', price: 15.00 },
     { id: 20, name: 'Wasa Sourcream & Onion', price: 15.00 },
-    { id: 21, name: 'Wasa Tomato Basil', price: 15.00 }
+    { id: 21, name: 'Wasa Tomato Basil', price: 15.00 },
+    { id: 22, name: 'Åsna', price: 8599.00 }
 ];
 
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
@@ -29,14 +30,26 @@ function addToCart(productID) {
     cart.unshift(product);
     localStorage.setItem('cart', JSON.stringify(cart));
     alert(`${product.name} added to the cart!`)
+    updateTotalValue();
 }
 
 function removeFromCart(productID) {
     const productIndex = cart.findIndex(p => p.id === productID);
-    if (productIndex !== -1) {
+    if (productIndex === -1) {
+        const product = products.find(p => p.id === productID);
+        const productName = product ? product.name : 'This product';
+        alert(`${productName} is not in the cart!`);
+        return;
+    }
         const removedProduct = cart.splice(productIndex, 1)[0];
         localStorage.setItem('cart', JSON.stringify(cart));
         alert(`${removedProduct.name} removed from the cart!`)
+        updateTotalValue();
     }
-}
-
+    function updateTotalValue() {
+        const total = cart.reduce((sum, product) => sum + product.price, 0);
+        document.getElementById('totalValue').textContent = `Total: ${total.toFixed(2)} Kr`;
+    }
+    document.addEventListener('DOMContentLoaded', () => {
+        updateTotalValue();
+    });
