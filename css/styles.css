@@ -1,6 +1,7 @@
-body{
+body {
     margin: 0;
 }
+
 header {
     font-family: Arial, Helvetica, sans-serif;
     background-color: rgb(47, 45, 45);
@@ -106,9 +107,10 @@ button.remove {
 .add:active {
     color: rgb(37, 35, 35);
 }
+
 footer {
     position: fixed;
-    bottom:0;
+    bottom: 0;
     background: linear-gradient(to bottom, #00ff00 0%, #99ffcc 100%);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     padding: 15px;
@@ -118,18 +120,22 @@ footer {
     justify-content: space-between;
     align-items: center;
 }
+
 .cart {
     font-size: 22px;
     color: black;
     text-decoration: none;
     text-align: center;
 }
-.TotalValue, .TotalItems {
+
+.TotalValue,
+.TotalItems {
     font-size: 16px;
     color: black;
     margin: 0;
     font-weight: bold;
 }
+
 .TotalValue {
     margin-right: 40px;
 }
@@ -146,4 +152,44 @@ footer {
 .OneOne {
     width: 100px;
 
+}
+
+/* Improved Flexbox container with spacing adjustments */
+.product-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+    /* Increased gap to separate items */
+    padding: 20px;
+}
+
+/* Style for individual product items with spacing fixes */
+.product {
+    flex: 1 1 calc(20% - 30px);
+    /* Ensure consistent sizing */
+    max-width: 200px;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px;
+    /* Added margin to prevent overlapping */
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive adjustments for better layout on smaller screens */
+@media (max-width: 768px) {
+    .product {
+        flex: 1 1 calc(45% - 20px);
+        /* Adjusted width for medium screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .product {
+        flex: 1 1 100%;
+        /* Full width for small screens */
+    }
 }
