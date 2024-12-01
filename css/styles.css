@@ -158,23 +158,22 @@ footer {
 .product-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: space-between;
     gap: 20px;
-    /* Increased gap to separate items */
+    /* Space between products */
     padding: 20px;
 }
 
 /* Style for individual product items with spacing fixes */
 .product {
-    flex: 1 1 calc(20% - 30px);
-    /* Ensure consistent sizing */
-    max-width: 200px;
+    flex: 1 1 calc(33.33% - 20px);
+    /* 3 items per row */
+    max-width: calc(33.33% - 20px);
     text-align: center;
     border: 1px solid #ccc;
     border-radius: 10px;
     padding: 10px;
     margin: 10px;
-    /* Added margin to prevent overlapping */
     background-color: #fff;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
@@ -183,13 +182,13 @@ footer {
 @media (max-width: 768px) {
     .product {
         flex: 1 1 calc(45% - 20px);
-        /* Adjusted width for medium screens */
+        max-width: calc(50% - 20px);
     }
 }
 
 @media (max-width: 480px) {
     .product {
         flex: 1 1 100%;
-        /* Full width for small screens */
+        max-width: 100%;
     }
 }
