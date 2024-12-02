@@ -50,7 +50,6 @@ function removeFromCart(productID) {
 }
 
 
-
 function helpPopUp() {
     document.getElementById("popup").style.display = "flex";
 }
@@ -71,3 +70,10 @@ document.addEventListener('DOMContentLoaded', () => {
     updateTotalItems();
 });
 
+function clearCart() {
+    cart = [];
+    localStorage.removeItem('cart');
+    alert('Cart is now empty');
+    updateTotalItems();
+    updateTotalValue();
+}
