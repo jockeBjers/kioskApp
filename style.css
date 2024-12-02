@@ -148,9 +148,9 @@ footer {
   .Pris, .itemDescription {
     margin: 10px 0;
   }
-  .product img {
-    width: 150px; 
-    height: 150px;
+  .product-img {
+    width: 250px; 
+    height: 250px;
 }
 
   
