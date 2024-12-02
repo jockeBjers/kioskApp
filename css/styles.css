@@ -163,6 +163,8 @@ footer {
     gap: 20px;
     /* Space between products */
     padding: 20px;
+    padding-top: 80px;
+    padding-bottom: 60px;
 }
 
 /* Style for individual product items with spacing fixes */
