@@ -1,195 +1,226 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Student Kiosk</title>
     <link rel="stylesheet" href="./css/styles.css" />
     <script src="./js/script.js" defer></script>
-</head>
+  </head>
 
-<body>
+  <body>
     <header>
         <h1>Student Kiosk</h1>
-    </header>
+         <div class="header-icons">
+        <!-- help icon-->
+         <button id="help" onclick="helpPopUp()" title="Need help"><img src="./Images/ask.png" alt="help"></button>     
+        <div id="popup">
+            <h2>How to</h2>
+            <ol>
+                <li>Create an Account</li>
+                <li>First time? "Sign Up" to create an account. Once your account is created, log in using your email and password.</li>
+                <li>Explore the kiosk’s menu within the app. You can navigate through categories like snacks, beverages, or other items available for purchase.</li>
+                <li>Add items to your cart by selecting them and tapping "+" and remove by typing "-".</li>
+                <li>When you’ve selected all the items you want, tap on your cart icon to review your order.</li>
+                <li>Make sure everything is correct, then tap "Checkout".</li>
+                <li>Select Payment Method</li>
+                <li>Pick Up Your Items</li>
+                </ol>
+                <button id="closeBtn" onclick="closePopUp()">Close</button>
+        </div>  
+        <!-- user icon -->
+        <div id="user">
+          <a href="./pages/signin.html" title="Login">
+          <img src="./Images/user.png" alt="user">
+        </a>
+        </div>   
+      </div> 
+</header>
+   
+        
 
     <!--Bilderna har olika aspekt-ratio därav klassnamn för att ha olika bredd i css. Lämnar dom här så länge så den som ska ha dom kan bara plocka :) -->
 
     <div class="Celsius">
-        <img src="./Images/Celsius.png" alt="" class="OneTwo" />
-        <p class="itemDescription">Celsius</p>
-        <p class="Pris">20.00 Kr</p>
-
-        <button class="add" onclick="addToCart(1)">+</button>
-        <button class="remove" onclick="removeFromCart(1)">-</button>
-
+   <img src="./Images/Celsius.png" alt="" class="OneTwo" />
+      <p class="itemDescription">Celsius</p>
+      <p class="Pris">20.00 Kr</p>
+      <button class="add" onclick="addToCart(1)">+</button>
+      <button class="remove" onclick="removeFromCart(1)">-</button>
     </div>
 
     <div class="Arboga">
-        <img src="./Images/Arboga.png" alt="" class="OneTwo" />
-        <p class="itemDescription">Arboga 10.2 % Vol</p>
-        <p class="Pris">2.99 Kr</p>
-        <button class="add" onclick="addToCart(1)">+</button>
-        <button class="remove" onclick="removeFromCart(1)">-</button>
+      <img src="./Images/Arboga.png" alt="" class="OneTwo" />
+      <p class="itemDescription">Arboga 10.2 % Vol</p>
+      <p class="Pris">2.99 Kr</p>
+      <button class="add" onclick="addToCart(2)">+</button>
+      <button class="remove" onclick="removeFromCart(2)">-</button>
     </div>
 
     <div class="CocaCola">
-        <img src="./Images/CocaCola.png" alt="" class="OneTwo" />
-        <p class="itemDescription">Coca Cola</p>
-        <p class="Pris">10.00 Kr</p>
-        <button class="add" onclick="addToCart(1)">+</button>
-        <button class="remove" onclick="removeFromCart(1)">-</button>
+      <img src="./Images/CocaCola.png" alt="" class="OneTwo" />
+      <p class="itemDescription">Coca Cola</p>
+      <p class="Pris">10.00 Kr</p>
+      <button class="add" onclick="addToCart(3)">+</button>
+      <button class="remove" onclick="removeFromCart(3)">-</button>
     </div>
 
     <div class="ColaZero">
-        <img src="./Images/ColaZero.png" alt="" class="OneTwo" />
-        <p class="itemDescription">Coca Cola Zero</p>
-        <p class="Pris">10.00 Kr</p>
-        <button class="add" onclick="addToCart(1)">+</button>
-        <button class="remove" onclick="removeFromCart(1)">-</button>
+      <img src="./Images/ColaZero.png" alt="" class="OneTwo" />
+      <p class="itemDescription">Coca Cola Zero</p>
+      <p class="Pris">10.00 Kr</p>
+      <button class="add" onclick="addToCart(4)">+</button>
+      <button class="remove" onclick="removeFromCart(4)">-</button>
     </div>
 
     <div class="DrPepper">
-        <img src="./Images/DrPepper.png" alt="" class="OneTwo" />
-        <p class="itemDescription">Dr Pepper</p>
-        <p class="Pris">10.00 Kr</p>
-        <button class="add" onclick="addToCart(1)">+</button>
-        <button class="remove" onclick="removeFromCart(1)">-</button>
+      <img src="./Images/DrPepper.png" alt="" class="OneTwo" />
+      <p class="itemDescription">Dr Pepper</p>
+      <p class="Pris">10.00 Kr</p>
+      <button class="add" onclick="addToCart(5)">+</button>
+      <button class="remove" onclick="removeFromCart(5)">-</button>
     </div>
 
     <div class="Fanta">
-        <img src="./Images/Fanta.png" alt="" class="OneTwo" />
-        <p class="itemDescription">Fanta</p>
-        <p class="Pris">10.00 Kr</p>
-        <button class="add" onclick="addToCart(1)">+</button>
-        <button class="remove" onclick="removeFromCart(1)">-</button>
+      <img src="./Images/Fanta.png" alt="" class="OneTwo" />
+      <p class="itemDescription">Fanta</p>
+      <p class="Pris">10.00 Kr</p>
+      <button class="add" onclick="addToCart(6)">+</button>
+      <button class="remove" onclick="removeFromCart(6)">-</button>
     </div>
 
     <div class="JackD">
-        <img src="./Images/Jack.png" alt="" class="OneTwo" />
-        <p class="itemDescription">Jack Daniel's Coca Cola</p>
-        <p class="Pris">75.00 Kr</p>
-        <button class="add" onclick="addToCart(1)">+</button>
-        <button class="remove" onclick="removeFromCart(1)">-</button>
+      <img src="./Images/Jack.png" alt="" class="OneTwo" />
+      <p class="itemDescription">Jack Daniel's Coca Cola</p>
+      <p class="Pris">75.00 Kr</p>
+      <button class="add" onclick="addToCart(7)">+</button>
+      <button class="remove" onclick="removeFromCart(7)">-</button>
     </div>
 
     <div class="RedBull">
-        <img src="./Images/RedBull.png" alt="" class="OneTwo" />
-        <p class="itemDescription">Red Bull</p>
-        <p class="Pris">25.00 Kr</p>
-        <button class="add" onclick="addToCart(1)">+</button>
-        <button class="remove" onclick="removeFromCart(1)">-</button>
+      <img src="./Images/RedBull.png" alt="" class="OneTwo" />
+      <p class="itemDescription">Red Bull</p>
+      <p class="Pris">25.00 Kr</p>
+      <button class="add" onclick="addToCart(8)">+</button>
+      <button class="remove" onclick="removeFromCart(8)">-</button>
     </div>
 
     <div class="ZeunertsJulmust">
-        <img src="./Images/ZeunertsJulmust.png" alt="" class="OneTwo" />
-        <p class="itemDescription">Zeunerts Julmust</p>
-        <p class="Pris">30.00 Kr</p>
-        <button class="add" onclick="addToCart(1)">+</button>
-        <button class="remove" onclick="removeFromCart(1)">-</button>
+      <img src="./Images/ZeunertsJulmust.png" alt="" class="OneTwo" />
+      <p class="itemDescription">Zeunerts Julmust</p>
+      <p class="Pris">30.00 Kr</p>
+      <button class="add" onclick="addToCart(9)">+</button>
+      <button class="remove" onclick="removeFromCart(9)">-</button>
     </div>
 
     <div class="ZeunertsZero">
-        <img src="./Images/ZeunertsZero.png" alt="" class="OneTwo" />
-        <p class="itemDescription">Zeunerts Julmust Sockerfri</p>
-        <p class="Pris">30.00 Kr</p>
-        <button class="add" onclick="addToCart(1)">+</button>
-        <button class="remove" onclick="removeFromCart(1)">-</button>
+      <img src="./Images/ZeunertsZero.png" alt="" class="OneTwo" />
+      <p class="itemDescription">Zeunerts Julmust Sockerfri</p>
+      <p class="Pris">30.00 Kr</p>
+      <button class="add" onclick="addToCart(10)">+</button>
+      <button class="remove" onclick="removeFromCart(10)">-</button>
+    </div>
+
+    <div class="Donkey">
+      <img src="./Images/Donkey.png" alt="" class="OneTwo" />
+      <p class="itemDescription">Åsna</p>
+      <p class="Pris">8599.00 Kr</p>
+      <button class="add" onclick="addToCart(22)">+</button>
+      <button class="remove" onclick="removeFromCart(22)">-</button>
     </div>
 
     <div class="Cheetos">
-        <img src="./Images/Cheetos.png" alt="" class="OneOne" />
-        <p class="itemDescription">Cheetos Cheddar Jalapeño</p>
-        <p class="Pris">40.00 Kr</p>
-        <button class="add" onclick="addToCart(1)">+</button>
-        <button class="remove" onclick="removeFromCart(1)">-</button>
+      <img src="./Images/Cheetos.png" alt="" class="OneOne" />
+      <p class="itemDescription">Cheetos Cheddar Jalapeño</p>
+      <p class="Pris">40.00 Kr</p>
+      <button class="add" onclick="addToCart(11)">+</button>
+      <button class="remove" onclick="removeFromCart(11)">-</button>
     </div>
 
     <div class="Dumle">
-        <img src="./Images/Dumle.png" alt="" class="OneOne" />
-        <p class="itemDescription">Dumle Snacks Mint</p>
-        <p class="Pris">35.00 Kr</p>
-        <button class="add" onclick="addToCart(1)">+</button>
-        <button class="remove" onclick="removeFromCart(1)">-</button>
+      <img src="./Images/Dumle.png" alt="" class="OneOne" />
+      <p class="itemDescription">Dumle Snacks Mint</p>
+      <p class="Pris">35.00 Kr</p>
+      <button class="add" onclick="addToCart(12)">+</button>
+      <button class="remove" onclick="removeFromCart(12)">-</button>
     </div>
 
     <div class="Kina">
-        <img src="./Images/Kina.png" alt="" class="OneOne" />
-        <p class="itemDescription">Kina Salty Snacks</p>
-        <p class="Pris">39.00 Kr</p>
-        <button class="add" onclick="addToCart(1)">+</button>
-        <button class="remove" onclick="removeFromCart(1)">-</button>
+      <img src="./Images/Kina.png" alt="" class="OneOne" />
+      <p class="itemDescription">Kina Salty Snacks</p>
+      <p class="Pris">39.00 Kr</p>
+      <button class="add" onclick="addToCart(13)">+</button>
+      <button class="remove" onclick="removeFromCart(13)">-</button>
     </div>
 
     <div class="KinaOriginal">
-        <img src="./Images/Kina2.png" alt="" class="OneOne" />
-        <p class="itemDescription">Kina Snacks</p>
-        <p class="Pris">39.00 Kr</p>
-        <button class="add" onclick="addToCart(1)">+</button>
-        <button class="remove" onclick="removeFromCart(1)">-</button>
+      <img src="./Images/Kina2.png" alt="" class="OneOne" />
+      <p class="itemDescription">Kina Snacks</p>
+      <p class="Pris">39.00 Kr</p>
+      <button class="add" onclick="addToCart(14)">+</button>
+      <button class="remove" onclick="removeFromCart(14)">-</button>
     </div>
 
     <div class="Ahlgrens">
-        <img src="./Images/Ahlgrens.png" alt="" class="OneOne" />
-        <p class="itemDescription">Ahlgrens Bilar</p>
-        <p class="Pris">21.90 Kr</p>
-        <button class="add" onclick="addToCart(1)">+</button>
-        <button class="remove" onclick="removeFromCart(1)">-</button>
+      <img src="./Images/Ahlgrens.png" alt="" class="OneOne" />
+      <p class="itemDescription">Ahlgrens Bilar</p>
+      <p class="Pris">21.90 Kr</p>
+      <button class="add" onclick="addToCart(15)">+</button>
+      <button class="remove" onclick="removeFromCart(15)">-</button>
     </div>
 
     <div class="Olw">
-        <img src="./Images/Olw.png" alt="" class="OneOne" />
-        <p class="itemDescription">Sweet Chilimayo Chips</p>
-        <p class="Pris">40.00 Kr</p>
-        <button class="add" onclick="addToCart(1)">+</button>
-        <button class="remove" onclick="removeFromCart(1)">-</button>
+      <img src="./Images/Olw.png" alt="" class="OneOne" />
+      <p class="itemDescription">Sweet Chilimayo Chips</p>
+      <p class="Pris">40.00 Kr</p>
+      <button class="add" onclick="addToCart(16)">+</button>
+      <button class="remove" onclick="removeFromCart(16)">-</button>
     </div>
 
     <div class="Meatballs">
-        <img src="./Images/Köttbullar.png" alt="" class="OneOne" />
-        <p class="itemDescription">gooh! Köttbullar</p>
-        <p class="Pris">55.90 Kr</p>
-        <button class="add" onclick="addToCart(1)">+</button>
-        <button class="remove" onclick="removeFromCart(1)">-</button>
+      <img src="./Images/Köttbullar.png" alt="" class="OneOne" />
+      <p class="itemDescription">gooh! Köttbullar</p>
+      <p class="Pris">55.90 Kr</p>
+      <button class="add" onclick="addToCart(17)">+</button>
+      <button class="remove" onclick="removeFromCart(17)">-</button>
     </div>
 
     <div class="Lasagnette">
-        <img src="./Images/Lasagnette.png" alt="" class="OneOne" />
-        <p class="itemDescription">gooh! Lasagnette</p>
-        <p class="Pris">55.90 Kr</p>
-        <button class="add" onclick="addToCart(1)">+</button>
-        <button class="remove" onclick="removeFromCart(1)">-</button>
+      <img src="./Images/Lasagnette.png" alt="" class="OneOne" />
+      <p class="itemDescription">gooh! Lasagnette</p>
+      <p class="Pris">55.90 Kr</p>
+      <button class="add" onclick="addToCart(18)">+</button>
+      <button class="remove" onclick="removeFromCart(18)">-</button>
     </div>
 
     <div class="WasaFrenchHerbs">
-        <img src="./Images/WasaFrenchHerbs.png" alt="" class="OneOne" />
-        <p class="itemDescription">Wasa French Herbs</p>
-        <p class="Pris">15.00 Kr</p>
-        <button class="add" onclick="addToCart(1)">+</button>
-        <button class="remove" onclick="removeFromCart(1)">-</button>
+      <img src="./Images/WasaFrenchHerbs.png" alt="" class="OneOne" />
+      <p class="itemDescription">Wasa French Herbs</p>
+      <p class="Pris">15.00 Kr</p>
+      <button class="add" onclick="addToCart(19)">+</button>
+      <button class="remove" onclick="removeFromCart(19)">-</button>
     </div>
 
     <div class="WasaSourCream">
-        <img src="./Images/WasaSourCream.png" alt="" class="OneOne" />
-        <p class="itemDescription">Wasa Sourcream & Onion</p>
-        <p class="Pris">15.00 Kr</p>
-        <button class="add" onclick="addToCart(1)">+</button>
-        <button class="remove" onclick="removeFromCart(1)">-</button>
+      <img src="./Images/WasaSourCream.png" alt="" class="OneOne" />
+      <p class="itemDescription">Wasa Sourcream & Onion</p>
+      <p class="Pris">15.00 Kr</p>
+      <button class="add" onclick="addToCart(20)">+</button>
+      <button class="remove" onclick="removeFromCart(20)">-</button>
     </div>
 
     <div class="WasaTomatoBasil">
-        <img src="./Images/WasaTomatoBasil.png" alt="" class="OneOne" />
-        <p class="itemDescription">Wasa Tomato Basil</p>
-        <p class="Pris">15.00 Kr</p>
-        <button class="add" onclick="addToCart(1)">+</button>
-        <button class="remove" onclick="removeFromCart(1)">-</button>
+      <img src="./Images/WasaTomatoBasil.png" alt="" class="OneOne" />
+      <p class="itemDescription">Wasa Tomato Basil</p>
+      <p class="Pris">15.00 Kr</p>
+      <button class="add" onclick="addToCart(21)">+</button>
+      <button class="remove" onclick="removeFromCart(21)">-</button>
     </div>
 
-
     <footer>
-        <a href="pages/checkout.html" class="cart">CART 🛒</a>
+      <p class="TotalItems" id="totalItems">Antal: 0 st</p>
+      <a href="pages/checkout.html" class="cart">CART 🛒</a>
+      <p class="TotalValue" id="totalValue">Total: 0.00 Kr</p>
     </footer>
-</body>
-
+  </body>
 </html>
