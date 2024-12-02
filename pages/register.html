@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Kiosk</title>
+    <link rel="stylesheet" href="../css/signin.css" />
+    <script src="../js/signin.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <h1>Student Kiosk</h1>
+        <div class="header-icons">
+            <!-- help icon-->
+            <button id="help" onclick="helpPopUp()" title="Need help"><img src="../Images/ask.png"
+                    alt="Help Icon"></button>
+            <div id="popup">
+                <h2>How to</h2>
+                <ol>
+                    <li>Create an Account</li>
+                    <li>First time? "Sign Up" to create an account. Once your account is created, log in using your
+                        email and password.</li>
+                    <li>Explore the kiosk’s menu within the app. You can navigate through categories like snacks,
+                        beverages, or other items available for purchase.</li>
+                    <li>Add items to your cart by selecting them and tapping "+" and remove by typing "-".</li>
+                    <li>When you’ve selected all the items you want, tap on your cart icon to review your order.</li>
+                    <li>Make sure everything is correct, then tap "Checkout".</li>
+                    <li>Select Payment Method</li>
+                    <li>Pick Up Your Items</li>
+                </ol>
+                <button id="closeBtn" onclick="closePopUp()">Close</button>
+            </div>
+            <!-- user icon -->
+            <div id="user">
+                <a href="./signin.html" title="Login">
+                    <img src="../Images/user.png" alt="user">
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- back arrow -->
+    <section class="navbar">
+        <div class="container">
+            <a href="../index.html"><span>&#8592</span></a>
+            <span>Sign up</span>
+        </div>
+    </section>
+
+<!-- register -->
+<section class="register">
+    <div class="container">
+        <!-- form -->
+        <form>
+            <div class="input-field">
+                <input type="text" placeholder="First Name" required>
+            </div>
+            <div class="input-field">
+                <input type="text" placeholder="Last Name" required>
+            </div>
+            <div class="input-field">
+                <input type="text" placeholder="Username" required>
+            </div>
+            <div class="input-field">
+                <input type="email" placeholder="Email" required>
+            </div>
+            <div class="input-field">
+                <input type="password" placeholder="Password" required>
+            </div>
+            <div class="input-field">
+                <input type="password" placeholder="Confirm Password" required>
+            </div>
+        </form>
+        <!-- other -->
+        <div class="info">
+            <ul>
+                <li>
+                    Have an account? <a href="./signin.html">Sign in</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="summit">
+            <a class="button" href="#">Sign up</a>
+        </div>
+    </div>
+</section>
+
+
+    <!-- login with social media -->
+    <section class="login-with">
+
+        <h5>Sign in with</h5>
+        <div class="row container">
+            <div class="col-50">
+                <!-- Facebook Login Button -->
+                <button class="button button-facebook" aria-label="Sign in with Facebook">
+                    <i class="fa-facebook"></i> Facebook
+                </button>
+            </div>
+            <div class="col-50">
+                <!-- Twitter Login Button -->
+                <button class="button button-twitter" aria-label="Sign in with Twitter">
+                    <i class="fa-twitter"></i> Twitter
+                </button>
+            </div>
+        </div>
+        <div class="row container">
+            <div class="col-50">
+                <!-- LinkedIn Login Button -->
+                <button class="button button-linkedin" aria-label="Sign in with LinkedIn">
+                    <i class="fa-linkedin"></i> LinkedIn
+                </button>
+            </div>
+            <div class="col-50">
+                <!-- Google Login Button -->
+                <button class="button button-google" aria-label="Sign in with Google">
+                    <i class="fa-google"></i> Google
+                </button>
+            </div>
+        </div>
+    </section>
+    
+
+
+
+    </body>
+
+    </html>
