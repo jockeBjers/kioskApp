@@ -2,10 +2,12 @@ function renderCart() {
     const cartTableBody = document.querySelector('#cartTable tbody');
     const cartTotalElement = document.getElementById('cartTotal');
 
-    
+    // Hämta kundvagnen från Local Storage
     const storedCart = JSON.parse(localStorage.getItem('cart')) || [];
-    cart = storedCart; 
-    cartTableBody.innerHTML = ''; 
+    cart = storedCart;
+
+    // Töm tabellen
+    cartTableBody.innerHTML = '';
 
     let total = 0;
 
@@ -27,7 +29,13 @@ function renderCart() {
     });
 
     cartTotalElement.textContent = `Total: ${total.toFixed(2)} Kr`;
+
+    // Visa ett meddelande om kundvagnen är tom
+    if (cart.length === 0) {
+        cartTableBody.innerHTML = `<tr><td colspan="5">Your cart is empty.</td></tr>`;
+    }
 }
+
 
 
 
