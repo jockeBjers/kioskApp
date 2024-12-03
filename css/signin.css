@@ -237,8 +237,23 @@ padding-bottom: 16px;
 .button-linkedin {
    background: #0077B5;
 }
+
 .button-google {
    background: #dd4b39;
 }
+=======
+.incorrect input{
+   border-color: red;
+}
+#error-message{
+   text-align: center;
+   color:red;
+}
+#success-message{
+   text-align: center;
+   color:green;
+}
+/*  register */
+
 
 
