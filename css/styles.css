@@ -1,10 +1,10 @@
 body {
     margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 header {
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: rgb(0, 170, 226);
+    background-color: rgb(13, 161, 210);
     color: #000000;
     width: 100%;
     padding: 10px 20px;
@@ -25,7 +25,7 @@ header h1 {
 
 #help {
     color: #000000;
-    background-color: rgb(0, 170, 226);
+    background-color: rgb(13, 161, 210);
     border: none;
     font-size: 16px;
     font-weight: bold;
@@ -93,7 +93,7 @@ header h1 {
 
 /* help-icon*/
 #help {
-    background-color: rgb(0, 170, 226);
+    background-color: rgb(13, 161, 210);
     border: none;
 }
 
@@ -153,13 +153,21 @@ header h1 {
 
 button.add,
 button.remove {
-    border: none;
-    font-size: 23px;
-    background-color: white;
+    border: 1px solid rgb(156, 153, 153);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-size: 25px;
+    border-radius: 50%;
+    background-color: rgb(97, 94, 193);
+}
+
+.add {
+    color: white;
 }
 
 .remove {
-    color: red
+    color: red;
+    padding-left: 8px;
+    padding-right: 8px;
 }
 
 .add:hover {
@@ -230,6 +238,7 @@ footer {
     flex-wrap: wrap;
     justify-content: space-between;
     gap: 20px;
+    align-items: center;
 
     padding: 20px;
     padding-top: 80px;
