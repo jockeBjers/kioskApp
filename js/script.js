@@ -29,15 +29,15 @@ function addToCart(productID) {
     const product = products.find(p => p.id === productID);
     if (!product) return;
 
-    
+
     const cartItem = cart.find(item => item.id === productID);
     if (cartItem) {
-        cartItem.quantity += 1; 
+        cartItem.quantity += 1;
     } else {
-        cart.push({ ...product, quantity: 1 }); 
+        cart.push({ ...product, quantity: 1 });
     }
 
-    
+
     localStorage.setItem('cart', JSON.stringify(cart));
     alert(`${product.name} added to the cart!`);
     updateTotalValue();
@@ -87,4 +87,30 @@ function clearCart() {
     alert('Cart is now empty');
     updateTotalItems();
     updateTotalValue();
+
+    //Rensar i localstorage att remove knappen ska vara synlig
+    document.querySelectorAll(".remove").forEach((removeBtn, index) => {
+        removeBtn.style.visibility = "hidden";
+        localStorage.removeItem(`removeBtnVisible${index}`);
+    });
 }
+
+
+document.querySelectorAll(".remove").forEach((removeBtn, index) => {
+    const isVisible = localStorage.getItem(`removeBtnVisible${index}`) === "true";
+    removeBtn.style.visibility = isVisible ? "visible" : "hidden";
+});
+
+
+document.querySelectorAll(".add").forEach((button, index) => {
+    button.addEventListener('click', () => {
+        const removeBtn = document.querySelectorAll(".remove")[index];
+        if (removeBtn) {
+            removeBtn.style.visibility = "visible";
+            localStorage.setItem(`removeBtnVisible${index}`, "true");
+        }
+    })
+})
+
+
+
