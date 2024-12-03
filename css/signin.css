@@ -223,6 +223,10 @@ padding-bottom: 16px;
    text-align: center;
    color:red;
 }
+#success-message{
+   text-align: center;
+   color:green;
+}
 /*  register */
 
 

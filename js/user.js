@@ -6,12 +6,12 @@ const email_input = document.getElementById('email-input');
 const password_input = document.getElementById('password-input');
 const confirm_password_input = document.getElementById('confirm-password-input');
 const error_message = document.getElementById('error-message');
+const success_message = document.getElementById('success-message');
 
 form.addEventListener('submit', (e) => {
     let errors = [];
 
     if (firstname_input && lastname_input && username_input) {
-        // Signup form validation
         errors = getSignupFormErrors(
             firstname_input.value,
             lastname_input.value,
@@ -21,13 +21,16 @@ form.addEventListener('submit', (e) => {
             confirm_password_input.value
         );
     } else {
-        // Login form validation
         errors = getLoginFormErrors(email_input.value, password_input.value);
     }
 
     if (errors.length > 0) {
         e.preventDefault();
         error_message.innerText = errors.join('. ');
+    }else{
+        e.preventDefault();
+        success_message.innerText = 'Account successfully created!';
+        form.reset();
     }
 });
 
@@ -87,11 +90,8 @@ allInputs.forEach(input => {
     input.addEventListener('input', () => {
         if (input.parentElement.classList.contains('incorrect')) {
             input.parentElement.classList.remove('incorrect');
-        }
-
-        // Optionally clear the error message if all fields are valid
-        if (error_message.innerText !== '') {
-            error_message.innerText = '';
+            error_message.innerText ='';
+            success_message.innerText = '';
         }
     });
 });
