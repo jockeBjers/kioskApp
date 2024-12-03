@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Student Kiosk</title>
     <link rel="stylesheet" href="../css/signin.css" />
-    <script src="../js/signin.js" defer></script>
+    <script src="../js/script.js" defer></script>
+    <script src="../js/user.js" defer></script>
 </head>
 
 <body>
@@ -51,28 +52,33 @@
 
 <!-- register -->
 <section class="register">
+    <p id="error-message"></p>
+    <p id="success-message"></p>
     <div class="container">
         <!-- form -->
-        <form>
+        <form id="form">
             <div class="input-field">
-                <input type="text" placeholder="First Name" required>
+                <input type="text" id="firstname-input" placeholder="First Name">
             </div>
             <div class="input-field">
-                <input type="text" placeholder="Last Name" required>
+                <input type="text" id="lastname-input" placeholder="Last Name">
             </div>
             <div class="input-field">
-                <input type="text" placeholder="Username" required>
+                <input type="text" id="username-input" placeholder="Username">
             </div>
             <div class="input-field">
-                <input type="email" placeholder="Email" required>
+                <input type="email" id="email-input" placeholder="Email">
             </div>
             <div class="input-field">
-                <input type="password" placeholder="Password" required>
+                <input type="password" id="password-input" placeholder="Password">
             </div>
             <div class="input-field">
-                <input type="password" placeholder="Confirm Password" required>
-            </div>
+                <input type="password" id="confirm-password-input" placeholder="Confirm Password">
+            </div><div class="summit">
+            <button type="submit" class="button">Sign up</button>
         </form>
+        </div>
+        
         <!-- other -->
         <div class="info">
             <ul>
@@ -82,9 +88,7 @@
             </ul>
         </div>
 
-        <div class="summit">
-            <a class="button" href="#">Sign up</a>
-        </div>
+        
     </div>
 </section>
 

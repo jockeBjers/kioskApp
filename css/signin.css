@@ -216,7 +216,17 @@ padding-bottom: 16px;
 .button-linkedin {
    background: #0077B5;
 }
-
+.incorrect input{
+   border-color: red;
+}
+#error-message{
+   text-align: center;
+   color:red;
+}
+#success-message{
+   text-align: center;
+   color:green;
+}
 /*  register */
 
 
