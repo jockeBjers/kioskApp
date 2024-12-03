@@ -1,10 +1,10 @@
 body {
     margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 header {
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: rgb(0, 170, 226);
+    background-color: rgb(13, 161, 210);
     color: #000000;
     width: 100%;
     padding: 10px 20px;
@@ -12,7 +12,8 @@ header {
     text-align: center;
     display: flex;
     justify-content: space-around;
-    position: fixed;
+    align-items: center;
+
 }
 
 header h1 {
@@ -25,11 +26,9 @@ header h1 {
 
 #help {
     color: #000000;
-    background-color: rgb(0, 170, 226);
-    border: none;
-    font-size: 16px;
+    background-color: rgb(13, 161, 210);
     font-weight: bold;
-    margin-right: 50px;
+    border: none;
 }
 
 
@@ -43,7 +42,6 @@ header h1 {
 
 }
 
-
 #closeBtn:hover {
     color: rgb(255, 0, 0, 0.373);
 }
@@ -52,15 +50,12 @@ header h1 {
     color: rgba(64, 6, 6, 0.373);
 }
 
-
 #closeBtn {
     border: none;
     background-color: rgb(47, 45, 45);
     color: red;
     font-size: 15px;
-
 }
-
 
 #popup {
     display: none;
@@ -74,16 +69,16 @@ header h1 {
     z-index: 9;
     background-color: rgb(47, 45, 45);
     color: #eee;
-    text-align: start;
+    text-align: center;
     line-height: 1.7;
     font-size: 12px;
     border-radius: 5px;
+    
 }
 
 header h1 {
     flex-grow: 1;
 }
-
 
 .header-icons {
     display: flex;
@@ -91,14 +86,14 @@ header h1 {
     align-items: center;
 }
 
-/* help-icon*/
+/* icon*/
 #help {
-    background-color: rgb(47, 45, 45);
+    background-color: rgb(13, 161, 210);
     border: none;
 }
 
-#help:hover {
-    opacity: 0.8;
+#help:hover, #user:hover {
+    opacity: 0.6;
     cursor: pointer;
 }
 
@@ -141,25 +136,28 @@ header h1 {
     border-radius: 5px;
 }
 
-/* user-icon */
+
 #user {
     margin-right: 50px;
 }
 
-#user:hover {
-    opacity: 0.8;
-}
-
-
 button.add,
 button.remove {
-    border: none;
-    font-size: 23px;
-    background-color: white;
+    border: 1px solid rgb(156, 153, 153);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-size: 25px;
+    border-radius: 50%;
+    background-color: rgb(97, 94, 193);
+}
+
+.add {
+    color: white;
 }
 
 .remove {
-    color: red
+    color: red;
+    padding-left: 8px;
+    padding-right: 8px;
 }
 
 .add:hover {
@@ -230,6 +228,7 @@ footer {
     flex-wrap: wrap;
     justify-content: space-between;
     gap: 20px;
+    align-items: center;
 
     padding: 20px;
     padding-top: 80px;
@@ -262,4 +261,13 @@ footer {
         flex: 1 1 100%;
         max-width: 100%;
     }
+}
+
+.product img {
+    width: 250px;
+    /* Fast bredd på 250px */
+    height: 250px;
+    /* Fast höjd på 250px */
+    object-fit: contain;
+    /* Bevarar proportioner utan beskärning */
 }
