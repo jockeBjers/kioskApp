@@ -93,7 +93,7 @@ header h1 {
 
 /* help-icon*/
 #help {
-    background-color: rgb(47, 45, 45);
+    background-color: rgb(0, 170, 226);
     border: none;
 }
 
@@ -265,8 +265,10 @@ footer {
 }
 
 .product img {
-    width: 250px;   /* Fast bredd på 250px */
-    height: 250px;  /* Fast höjd på 250px */
-    object-fit: contain; /* Bevarar proportioner utan beskärning */
+    width: 250px;
+    /* Fast bredd på 250px */
+    height: 250px;
+    /* Fast höjd på 250px */
+    object-fit: contain;
+    /* Bevarar proportioner utan beskärning */
 }
-
