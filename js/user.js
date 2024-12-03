@@ -11,6 +11,8 @@ const success_message = document.getElementById('success-message');
 form.addEventListener('submit', (e) => {
     let errors = [];
 
+    success_message.innerText = '';
+
     if (firstname_input && lastname_input && username_input) {
         errors = getSignupFormErrors(
             firstname_input.value,
@@ -30,6 +32,9 @@ form.addEventListener('submit', (e) => {
     }else{
         e.preventDefault();
         success_message.innerText = 'Account successfully created!';
+        allInputs.forEach(input => {
+            input.parentElement.classList.remove('incorrect');
+        });
         form.reset();
     }
 });
