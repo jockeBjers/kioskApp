@@ -9,6 +9,7 @@ const error_message = document.getElementById('error-message');
 const success_message = document.getElementById('success-message');
 
 form.addEventListener('submit', (e) => {
+    e.preventDefault();
     let errors = [];
 
     success_message.innerText = '';
@@ -31,7 +32,14 @@ form.addEventListener('submit', (e) => {
         error_message.innerText = errors.join('. ');
     }else{
         e.preventDefault();
+        if (firstname_input && lastname_input && username_input){
+            
         success_message.innerText = 'Account successfully created!';
+        }
+        else{
+            success_message.innerText = 'Login successful!';
+        }
+
         allInputs.forEach(input => {
             input.parentElement.classList.remove('incorrect');
         });
