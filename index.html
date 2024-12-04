@@ -1,45 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
 
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Student Kiosk</title>
-    <link rel="stylesheet" href="./css/styles.css" />
-    <script src="./js/script.js" defer></script>
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Student Kiosk</title>
+  <link rel="stylesheet" href="./css/styles.css" />
+  <script src="./js/script.js" defer></script>
+</head>
 
-  <body>
-    <header>
-        <h1>Student Kiosk</h1>
-         <div class="header-icons">
-        <!-- help icon-->
-         <button id="help" onclick="helpPopUp()" title="Need help"><img src="./Images/ask.png" alt="help"></button>     
-        <div id="popup">
-            <h2>How to</h2>
-            <ol>
-                <li>Create an Account</li>
-                <li>First time? "Sign Up" to create an account. Once your account is created, log in using your email and password.</li>
-                <li>Explore the kiosk’s menu within the app. You can navigate through categories like snacks, beverages, or other items available for purchase.</li>
-                <li>Add items to your cart by selecting them and tapping "+" and remove by typing "-".</li>
-                <li>When you’ve selected all the items you want, tap on your cart icon to review your order.</li>
-                <li>Make sure everything is correct, then tap "Checkout".</li>
-                <li>Select Payment Method</li>
-                <li>Pick Up Your Items</li>
-                </ol>
-                <button id="closeBtn" onclick="closePopUp()">Close</button>
-        </div>  
-        <!-- user icon -->
-        <div id="user">
-          <a href="./pages/signin.html" title="Login">
+<body>
+  <header>
+    <h1>Student Kiosk</h1>
+    <div class="header-icons">
+      <!-- help icon-->
+      <button id="help" onclick="helpPopUp()" title="Need help"><img src="./Images/ask.png" alt="help"></button>
+      <div id="popup">
+        <h2>How to</h2>
+        <ol>
+          <li>Create an Account</li>
+          <li>First time? "Sign Up" to create an account. Once your account is created, log in using your email and
+            password.</li>
+          <li>Explore the kiosk’s menu within the app. You can navigate through categories like snacks, beverages, or
+            other items available for purchase.</li>
+          <li>Add items to your cart by selecting them and tapping "+" and remove by typing "-".</li>
+          <li>When you’ve selected all the items you want, tap on your cart icon to review your order.</li>
+          <li>Make sure everything is correct, then tap "Checkout".</li>
+          <li>Select Payment Method</li>
+          <li>Pick Up Your Items</li>
+        </ol>
+        <button id="closeBtn" onclick="closePopUp()">Close</button>
+      </div>
+      <!-- user icon -->
+      <div id="user">
+        <a href="./pages/signin.html" title="Login">
           <img src="./Images/user.png" alt="user">
         </a>
-        </div>   
-      </div> 
-</header>
+      </div>
+    </div>
+  </header>
 
-  <!--Bilderna har olika aspekt-ratio därav klassnamn för att ha olika bredd i css. Lämnar dom här så länge så den som ska ha dom kan bara plocka :) -->
-  <div class="product-container">
+  <div class="button-container">
+    <button id="drinks" class="toggle-buttons active-button" onclick="showDrinks()">DRINKS</button>
+    <button id="snacks" class="toggle-buttons" onclick="showSnacks()">SNACKS</button>
+  </div>
+
+  <div id="drinks-section" class="product-container" style="display: flex;">
+
     <div class="product">
       <img src="./Images/Celsius.png" alt="Celsius" class="OneOne" />
       <p class="itemDescription">Celsius</p>
@@ -152,6 +159,11 @@
       <button class="remove" onclick="removeFromCart(13)">-</button>
     </div>
 
+
+
+  </div>
+  <div id="snacks-section" class="product-container" style="display: none;">
+
     <div class="product">
       <img src="./Images/Kina2.png" alt="KinaOriginal" class="OneOne" />
       <p class="itemDescription">Kina Snacks</p>
@@ -215,12 +227,14 @@
       <button class="add" onclick="addToCart(21)">+</button>
       <button class="remove" onclick="removeFromCart(21)">-</button>
     </div>
+
   </div>
+
   <footer>
     <div>
-    <p class="TotalItems" id="totalItems">Antal: 0 st</p>
-    <button onclick="clearCart()">Clear Cart</button>
-  </div>
+      <p class="TotalItems" id="totalItems">Antal: 0 st</p>
+      <button onclick="clearCart()">Clear Cart</button>
+    </div>
     <a href="pages/checkout.html" class="cart">CART 🛒</a>
     <p class="TotalValue" id="totalValue">Total: 0.00 Kr</p>
   </footer>
