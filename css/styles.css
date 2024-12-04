@@ -194,3 +194,14 @@ footer {
         max-width: 100%;
     }
 }
+
+.product img {
+    width: 150px;  
+    height: 150px; 
+    object-fit: contain; 
+}
+
+
+
+
+
