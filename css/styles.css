@@ -308,10 +308,9 @@ main{
 }
 
 .product img {
-    width: 250px;
-    /* Fast bredd på 250px */
-    height: 250px;
-    /* Fast höjd på 250px */
-    object-fit: contain;
-    /* Bevarar proportioner utan beskärning */
+
+    width: 150px;  
+    height: 150px; 
+    object-fit: contain; 
 }
+
