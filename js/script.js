@@ -25,7 +25,7 @@ const products = [
 
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
-
+printProducts();
 
 function addToCart(productID) {
     const product = products.find(p => p.id === productID);
@@ -140,3 +140,29 @@ function showSnacks() {
     document.getElementById("drinks").classList.remove("active-button");
 }
 
+function printProducts() {
+    const drinksContainer = document.getElementById('drinks-section');
+    const snacksContainer = document.getElementById('snacks-section');
+
+    drinksContainer.innerHTML = '';
+    snacksContainer.innerHTML = '';
+
+    products.forEach(product => {
+        const productDiv = document.createElement('div');
+        productDiv.classList.add('product');
+
+        productDiv.innerHTML = `
+          <img src="${product.img}" alt="${product.name}" class="OneOne" />
+          <p class="itemDescription">${product.name}</p>
+          <p class="Pris">${product.price.toFixed(2)} Kr</p>
+          <button class="add" onclick="addToCart(${product.id})">+</button>
+          <button class="remove" onclick="removeFromCart(${product.id})">-</button>
+        `;
+
+        if (product.category === 'drinks') {
+            drinksContainer.appendChild(productDiv);
+        } else if (product.category === 'snacks') {
+            snacksContainer.appendChild(productDiv);
+        }
+    });
+}

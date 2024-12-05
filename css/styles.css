@@ -293,10 +293,6 @@ main{
     cursor: pointer;
 }
 
-#drinks,
-#snacks {}
-
-
 @media (max-width: 768px) {
     .product {
         flex: 1 1 calc(45% - 20px);
