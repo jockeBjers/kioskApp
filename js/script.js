@@ -48,19 +48,26 @@ function addToCart(productID) {
 
 
 function removeFromCart(productID) {
-    const productIndex = cart.findIndex(p => p.id === productID);
-    if (productIndex === -1) {
+    const cartItem = cart.find(item => item.id === productID);
+    if (!cartItem) {
         const product = products.find(p => p.id === productID);
         const productName = product ? product.name : 'This product';
         alert(`${productName} is not in the cart!`);
         return;
     }
-    const removedProduct = cart.splice(productIndex, 1)[0];
+    if (cartItem.quantity > 1) {
+        cartItem.quantity -= 1; 
+    } else {
+        const productIndex = cart.indexOf(cartItem);
+        cart.splice(productIndex, 1); 
+    }
     localStorage.setItem('cart', JSON.stringify(cart));
-    alert(`${removedProduct.name} removed from the cart!`)
+    alert(`${cartItem.name} removed from the cart!`);
     updateTotalValue();
     updateTotalItems();
+    updateCartTable(); 
 }
+
 
 
 function helpPopUp() {
