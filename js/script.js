@@ -79,7 +79,7 @@ function closePopUp() {
 }
 
 function updateTotalValue() {
-    const total = cart.reduce((sum, product) => sum + product.price, 0);
+    const total = cart.reduce((sum, product) => sum + product.price * product.quantity, 0);
     document.getElementById('totalValue').textContent = `Total: ${total.toFixed(2)} Kr`;
 }
 function updateTotalItems() {
