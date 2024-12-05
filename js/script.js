@@ -55,6 +55,14 @@ function removeFromCart(productID) {
         alert(`${productName} is not in the cart!`);
         return;
     }
+
+    if (productIndex === 0) {
+        document.querySelectorAll(".remove").forEach((removeBtn, index) => {
+            removeBtn.style.visibility = "hidden";
+            localStorage.removeItem(`removeBtnVisible${index}`);
+        });
+    }
+
     const removedProduct = cart.splice(productIndex, 1)[0];
     localStorage.setItem('cart', JSON.stringify(cart));
     alert(`${removedProduct.name} removed from the cart!`)
