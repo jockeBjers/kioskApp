@@ -4,6 +4,7 @@ body {
     display: flex;
     flex-direction: column;
     height: 100vh;
+    height: 100svh;
 }
 
 header {
@@ -229,25 +230,29 @@ footer {
 
 main{
     height: calc(100vh - 160px);
+    height: calc(100svh - 160px);
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .product-container {
     overflow-y: auto;
+    max-width: 80vw;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: center;
     gap: 20px;
     align-items: center;
     height:100%;
-
+    padding:40px;
 }
 
 .product {
     flex: 1 1 calc(33.33% - 20px);
 
-    max-width: calc(33.33% - 20px);
+    max-width: 350px;
     text-align: center;
     border: 1px solid #ccc;
     border-radius: 10px;
@@ -293,22 +298,9 @@ main{
     cursor: pointer;
 }
 
-@media (max-width: 768px) {
-    .product {
-        flex: 1 1 calc(45% - 20px);
-        max-width: calc(50% - 20px);
-    }
-}
-
-@media (max-width: 480px) {
-    .product {
-        flex: 1 1 100%;
-        max-width: 100%;
-    }
-}
 
 .product img {
-
+    padding:10px;
     width: 150px;  
     height: 150px; 
     object-fit: contain; 
