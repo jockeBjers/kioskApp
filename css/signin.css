@@ -74,11 +74,12 @@ input:focus {
 }
 
 .summit {
+
    margin-top: 15px;
    text-align: center;
 }
 
-.summit .button {
+.submit .button {
    display: inline-block;
    width: 100%;
    background-color: #3f51b4;
@@ -95,6 +96,7 @@ input:focus {
 }
 
 .summit .button:active {
+
    color: #3f51b4;
    background-color: #fff;
 }
@@ -200,5 +202,3 @@ input:focus {
    text-align: center;
    color: green;
 }
-
-/*  register */
