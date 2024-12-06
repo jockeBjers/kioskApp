@@ -55,6 +55,14 @@ function removeFromCart(productID) {
         alert(`${productName} is not in the cart!`);
         return;
     }
+
+    if (productIndex === 0) {
+        document.querySelectorAll(".remove").forEach((removeBtn, index) => {
+            removeBtn.style.visibility = "hidden";
+            localStorage.removeItem(`removeBtnVisible${index}`);
+        });
+    }
+
     const removedProduct = cart.splice(productIndex, 1)[0];
     localStorage.setItem('cart', JSON.stringify(cart));
     alert(`${removedProduct.name} removed from the cart!`)
@@ -71,7 +79,7 @@ function closePopUp() {
 }
 
 function updateTotalValue() {
-    const total = cart.reduce((sum, product) => sum + product.price, 0);
+    const total = cart.reduce((sum, product) => sum + product.price * product.quantity, 0);
     document.getElementById('totalValue').textContent = `Total: ${total.toFixed(2)} Kr`;
 }
 function updateTotalItems() {
@@ -116,29 +124,29 @@ document.querySelectorAll(".add").forEach((button, index) => {
 
 
 
-/* DRINK / SNACKS */
+/* TOGGLE DRINK / SNACKS */
 
-function showDrinks() {
-    const drinks = document.getElementById("drinks-section");
-    const snacks = document.getElementById("snacks-section");
+function toggleItem(item) {
 
-    drinks.style.display = "flex";
-    snacks.style.display = "none";
-
-    document.getElementById("drinks").classList.add("active-button");
-    document.getElementById("snacks").classList.remove("active-button");
-}
-
-function showSnacks() {
     const drinks = document.getElementById("drinks-section");
     const snacks = document.getElementById("snacks-section");
 
     drinks.style.display = "none";
-    snacks.style.display = "flex";
+    snacks.style.display = "none";
 
-    document.getElementById("snacks").classList.add("active-button");
     document.getElementById("drinks").classList.remove("active-button");
+    document.getElementById("snacks").classList.remove("active-button");
+
+    if (item === 'drinks') {
+        drinks.style.display = 'flex';
+        document.getElementById("drinks").classList.add("active-button");
+    } else {
+        snacks.style.display = 'flex';
+        document.getElementById("snacks").classList.add("active-button");
+    }
 }
+
+/* PRINT OUT PRODUCTS */
 
 function printProducts() {
     const drinksContainer = document.getElementById('drinks-section');

@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Student Kiosk</title>
   <link rel="stylesheet" href="./css/styles.css" />
+  <link rel="stylesheet" href="./css/global.css">
   <script src="./js/script.js" defer></script>
 </head>
 
@@ -42,8 +43,8 @@
 
   <main>
     <div class="button-container">
-      <button id="drinks" class="toggle-buttons active-button" onclick="showDrinks()">DRINKS</button>
-      <button id="snacks" class="toggle-buttons" onclick="showSnacks()">SNACKS</button>
+      <button id="drinks" class="toggle-buttons active-button" onclick="toggleItem('drinks')">DRINKS</button>
+      <button id="snacks" class="toggle-buttons" onclick="toggleItem('snacks')">SNACKS</button>
     </div>
 
     <div id="drinks-section" class="product-container" style="display: flex;"></div>
@@ -53,7 +54,7 @@
   <footer>
     <div>
       <p class="TotalItems" id="totalItems">Antal: 0 st</p>
-      <button onclick="clearCart()">Clear Cart</button>
+      <button id="clearCart" onclick="clearCart()">Clear Cart</button>
     </div>
     <a href="pages/checkout.html" class="cart">CART 🛒</a>
     <p class="TotalValue" id="totalValue">Total: 0.00 Kr</p>

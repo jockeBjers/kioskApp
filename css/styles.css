@@ -4,147 +4,8 @@ body {
     display: flex;
     flex-direction: column;
     height: 100vh;
-}
+    height: 100svh;
 
-header {
-    height:80px;
-    background-color: rgb(13, 161, 210);
-    color: #000000;
-    padding-inline:20px;
-    font-size: 12px;
-    text-align: center;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-
-}
-
-header h1 {
-    flex-grow: 1;
-}
-
-#popup h2 {
-    text-align: center
-}
-
-#help {
-    color: #000000;
-    background-color: rgb(13, 161, 210);
-    border: none;
-    font-size: 16px;
-    font-weight: bold;
-    border: none;
-}
-
-
-#help:hover {
-    color: rgba(162, 135, 135, 0.166);
-}
-
-#help:active {
-
-    color: rgb(28, 17, 17, 0.166);
-
-}
-
-#closeBtn:hover {
-    color: rgb(255, 0, 0, 0.373);
-}
-
-#closeBtn:active {
-    color: rgba(64, 6, 6, 0.373);
-}
-
-#closeBtn {
-    border: none;
-    background-color: rgb(47, 45, 45);
-    color: red;
-    font-size: 15px;
-}
-
-#popup {
-    display: none;
-    flex-direction: column;
-    position: fixed;
-    top: 0;
-    right: 40px;
-    width: 300px;
-    height: 450px;
-    padding: 15px;
-    z-index: 9;
-    background-color: rgb(47, 45, 45);
-    color: #eee;
-    text-align: center;
-    line-height: 1.7;
-    font-size: 12px;
-    border-radius: 5px;
-
-}
-
-header h1 {
-    flex-grow: 1;
-}
-
-.header-icons {
-    display: flex;
-    gap: 10px;
-    align-items: center;
-}
-
-/* icon*/
-#help {
-    background-color: rgb(13, 161, 210);
-    border: none;
-}
-
-#help:hover,
-#user:hover {
-    opacity: 0.6;
-    cursor: pointer;
-}
-
-#popup h2 {
-    text-align: center
-}
-
-#closeBtn:hover {
-    color: rgb(255, 0, 0, 0.373);
-}
-
-#closeBtn:active {
-    color: rgba(64, 6, 6, 0.373);
-}
-
-
-#closeBtn {
-    border: none;
-    background-color: rgb(47, 45, 45);
-    color: red;
-    font-size: 15px;
-
-}
-
-#popup {
-    display: none;
-    flex-direction: column;
-    position: fixed;
-    top: 0;
-    right: 40px;
-    width: 300px;
-    height: 450px;
-    padding: 15px;
-    z-index: 9;
-    background-color: rgb(47, 45, 45);
-    color: #eee;
-    text-align: start;
-    line-height: 1.7;
-    font-size: 12px;
-    border-radius: 5px;
-}
-
-
-#user {
-    margin-right: 50px;
 }
 
 button.add,
@@ -183,16 +44,6 @@ button.remove {
     color: rgb(37, 35, 35);
 }
 
-footer {
-    height: 80px;
-    background: linear-gradient(to bottom, #0282f2 0%, #99ffcc 100%);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    padding-inline: 15px;
-    text-align: center;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
 
 .cart {
     font-size: 22px;
@@ -227,27 +78,31 @@ footer {
 
 }
 
-main{
+main {
     height: calc(100vh - 160px);
+    height: calc(100svh - 160px);
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .product-container {
     overflow-y: auto;
+    max-width: 80vw;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: center;
     gap: 20px;
     align-items: center;
-    height:100%;
-
+    height: 100%;
+    padding: 40px;
 }
 
 .product {
     flex: 1 1 calc(33.33% - 20px);
 
-    max-width: calc(33.33% - 20px);
+    max-width: 350px;
     text-align: center;
     border: 1px solid #ccc;
     border-radius: 10px;
@@ -260,14 +115,15 @@ main{
 /* DRINKS/SNACKS */
 
 
-.product-section{
-    width:100%;
+.product-section {
+    width: 100%;
     height: 100%;
-     flex-wrap: wrap;
+    flex-wrap: wrap;
     justify-content: space-between;
     gap: 20px;
     align-items: center;
 }
+
 .button-container {
     display: flex;
     justify-content: center;
@@ -277,40 +133,37 @@ main{
 
 .toggle-buttons {
     flex: 1;
-
     font-size: 28px;
     padding: 15px;
     border: none;
-    background:  rgb(13, 161, 210);
+    background: rgba(13, 161, 210, 0.582);
     border-bottom: 3px solid transparent;
 }
 
 .active-button {
-    background:  rgb(255, 255, 255);
+    background: rgba(13, 161, 210, 0.301);
 }
 
 .toggle-buttons:hover {
     cursor: pointer;
 }
 
-@media (max-width: 768px) {
-    .product {
-        flex: 1 1 calc(45% - 20px);
-        max-width: calc(50% - 20px);
-    }
-}
-
-@media (max-width: 480px) {
-    .product {
-        flex: 1 1 100%;
-        max-width: 100%;
-    }
-}
 
 .product img {
-
-    width: 150px;  
-    height: 150px; 
-    object-fit: contain; 
+    padding: 10px;
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
 }
 
+#clearCart {
+    border: solid, 2px, black;
+    background: linear-gradient(to bottom, #0c7295 0%, #edf3f0 100%);
+    text-align: center;
+    color: black;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 5px;
+
+}

@@ -19,83 +19,13 @@ a {
    text-decoration: none;
 }
 
-/* Header */
-header {
-   background-color: rgb(47, 45, 45);
-   color: #eee;
-   width: 100%;
-   padding: 10px 20px;
-   font-size: 12px;
-   text-align: center;
-   display: flex;
-   justify-content: space-around;
-   align-items: center;
-}
-
-header h1 {
-   flex-grow: 1;
-}
-
-.header-icons {
-   display: flex;
-   gap: 10px;
-   align-items: center;
-}
-
-/* icon */
-#help {
-   background-color: rgb(47, 45, 45);
-   border: none;
-}
-#help:hover, #user:hover {
-   opacity: 0.6;
-   cursor: pointer;
-}
-#popup h2 {
-   text-align: center
-}
-#closeBtn:hover {
-   color: rgb(255, 0, 0, 0.373);
-}
-
-#closeBtn:active {
-   color: rgba(64, 6, 6, 0.373);
-}
-
-#closeBtn {
-   border: none;
-   background-color: rgb(47, 45, 45);
-   color: red;
-   font-size: 15px;
-
-}
-#popup {
-   display: none;
-   flex-direction: column;
-   position: fixed;
-   top: 0;
-   right: 40px;
-   width: 300px;
-   height: 450px;
-   padding: 15px;
-   z-index: 9;
-   background-color: rgb(47, 45, 45);
-   color: #eee;
-   text-align: start;
-   line-height: 1.7;
-   font-size: 12px;
-   border-radius: 5px;
-}
-#user {
-   margin-right: 50px;
-}
-
 
 /* Navbar */
 .navbar {
    background: #3f51b4;
    padding: 20px 0;
 }
+
 .navbar a:hover {
    opacity: 0.6;
    cursor: pointer;
@@ -129,24 +59,27 @@ form input {
    border-radius: 3px;
    box-sizing: border-box;
 }
+
 input:hover {
-   border-color: #3f51b4; 
-   box-shadow: 0 0 5px rgba(2, 130, 242, 0.5); 
-   transition: all 0.3s ease; 
+   border-color: #3f51b4;
+   box-shadow: 0 0 5px rgba(2, 130, 242, 0.5);
+   transition: all 0.3s ease;
 }
 
 input:focus {
-   border-color: #004bb5; 
-   box-shadow: 0 0 8px rgba(0, 75, 181, 0.8); 
-   outline: none; 
+   border-color: #004bb5;
+   box-shadow: 0 0 8px rgba(0, 75, 181, 0.8);
+   outline: none;
    background-color: #f0f8ff;
 }
+
 .summit {
+
    margin-top: 15px;
    text-align: center;
 }
 
-.summit .button {
+.submit .button {
    display: inline-block;
    width: 100%;
    background-color: #3f51b4;
@@ -157,20 +90,25 @@ input:focus {
    font-size: 14px;
    cursor: pointer;
 }
+
 .summit .button:hover {
    opacity: 0.8;
 }
+
 .summit .button:active {
+
    color: #3f51b4;
-   background-color: #fff ;
+   background-color: #fff;
 }
+
 /* Additional Info Links */
 .info ul {
    padding: 0;
    list-style: none;
 }
+
 .info ul li {
-padding-bottom: 16px;
+   padding-bottom: 16px;
 }
 
 .info ul li a {
@@ -182,6 +120,7 @@ padding-bottom: 16px;
    text-decoration: underline;
    color: #dd4b39;
 }
+
 .info ul li a:active {
    color: #3f51b4;
 }
@@ -192,17 +131,20 @@ padding-bottom: 16px;
    text-align: center;
    margin: 20px 0;
 }
+
 .login-with .row {
    display: flex;
-   justify-content: center; 
-   gap: 40px; 
-   flex-wrap: wrap; 
+   justify-content: center;
+   gap: 40px;
+   flex-wrap: wrap;
 }
+
 .login-with .col-50 {
-   flex: 0 1 calc(50% - 20px); 
-   box-sizing: border-box; 
+   flex: 0 1 calc(50% - 20px);
+   box-sizing: border-box;
    max-width: 50%;
 }
+
 .login-with h5 {
    font-size: 20px;
    color: #333;
@@ -221,19 +163,24 @@ padding-bottom: 16px;
    text-align: center;
    margin-bottom: 10px;
 }
+
 .login-with .button:hover {
    opacity: 0.8;
 }
+
 .login-with .button:active {
    color: #3f51b4;
-   background-color: #fff ;
+   background-color: #fff;
 }
+
 .button-facebook {
    background: #3b5999;
 }
+
 .button-twitter {
    background: #55acee;
 }
+
 .button-linkedin {
    background: #0077B5;
 }
@@ -242,18 +189,16 @@ padding-bottom: 16px;
    background: #dd4b39;
 }
 
-.incorrect input{
+.incorrect input {
    border-color: red;
 }
-#error-message{
+
+#error-message {
    text-align: center;
-   color:red;
+   color: red;
 }
-#success-message{
+
+#success-message {
    text-align: center;
-   color:green;
+   color: green;
 }
-/*  register */
-
-
-
