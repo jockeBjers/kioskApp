@@ -4,23 +4,25 @@ body {
     display: flex;
     flex-direction: column;
     height: 100vh;
+    height: 100svh;
 }
 
 header {
     height: 80px;
     background-color: rgb(13, 161, 210);
     color: #000000;
-    padding-inline: 20px;
     font-size: 12px;
-    text-align: center;
     display: flex;
-    justify-content: space-around;
     align-items: center;
-
+}
+.header-icons{
+    width: 120px;
+    margin-right: 10px;
 }
 
 header h1 {
     flex-grow: 1;
+    margin-left: 20px;
 }
 
 #popup h2 {
@@ -229,25 +231,29 @@ footer {
 
 main {
     height: calc(100vh - 160px);
+    height: calc(100svh - 160px);
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .product-container {
     overflow-y: auto;
+    max-width: 80vw;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: center;
     gap: 20px;
     align-items: center;
-    height: 100%;
-
+    height:100%;
+    padding:40px;
 }
 
 .product {
     flex: 1 1 calc(33.33% - 20px);
 
-    max-width: calc(33.33% - 20px);
+    max-width: 350px;
     text-align: center;
     border: 1px solid #ccc;
     border-radius: 10px;
@@ -282,16 +288,24 @@ main {
     font-size: 28px;
     padding: 15px;
     border: none;
-    background: rgb(13, 161, 210);
+    background: rgba(13, 161, 210, 0.582);
     border-bottom: 3px solid transparent;
 }
 
 .active-button {
-    background: rgb(255, 255, 255);
+    background: rgba(13, 161, 210, 0.301);
 }
 
 .toggle-buttons:hover {
     cursor: pointer;
+}
+
+
+.product img {
+    padding:10px;
+    width: 150px;  
+    height: 150px; 
+    object-fit: contain; 
 }
 
 #clearCart {
@@ -304,27 +318,4 @@ main {
     cursor: pointer;
     margin: 5px;
 
-}
-
-
-
-@media (max-width: 768px) {
-    .product {
-        flex: 1 1 calc(45% - 20px);
-        max-width: calc(50% - 20px);
-    }
-}
-
-@media (max-width: 480px) {
-    .product {
-        flex: 1 1 100%;
-        max-width: 100%;
-    }
-}
-
-.product img {
-
-    width: 150px;
-    height: 150px;
-    object-fit: contain;
 }
