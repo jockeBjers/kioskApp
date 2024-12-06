@@ -124,29 +124,29 @@ document.querySelectorAll(".add").forEach((button, index) => {
 
 
 
-/* DRINK / SNACKS */
+/* TOGGLE DRINK / SNACKS */
 
-function showDrinks() {
-    const drinks = document.getElementById("drinks-section");
-    const snacks = document.getElementById("snacks-section");
+function toggleItem(item) {
 
-    drinks.style.display = "flex";
-    snacks.style.display = "none";
-
-    document.getElementById("drinks").classList.add("active-button");
-    document.getElementById("snacks").classList.remove("active-button");
-}
-
-function showSnacks() {
     const drinks = document.getElementById("drinks-section");
     const snacks = document.getElementById("snacks-section");
 
     drinks.style.display = "none";
-    snacks.style.display = "flex";
+    snacks.style.display = "none";
 
-    document.getElementById("snacks").classList.add("active-button");
     document.getElementById("drinks").classList.remove("active-button");
+    document.getElementById("snacks").classList.remove("active-button");
+
+    if (item === 'drinks') {
+        drinks.style.display = 'flex';
+        document.getElementById("drinks").classList.add("active-button");
+    } else {
+        snacks.style.display = 'flex';
+        document.getElementById("snacks").classList.add("active-button");
+    }
 }
+
+/* PRINT OUT PRODUCTS */
 
 function printProducts() {
     const drinksContainer = document.getElementById('drinks-section');
