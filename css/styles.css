@@ -148,11 +148,11 @@ main {
     cursor: pointer;
 }
 
-
 .product img {
-    width: 250px;   /* Fast bredd på 250px */
-    height: 250pxgit checko;  /* Fast höjd på 250px */
-    object-fit: contain; /* Bevarar proportioner utan beskärning */
+    padding: 10px;
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
 }
 
 #clearCart {
