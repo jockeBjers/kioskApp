@@ -22,4 +22,4 @@ jobs:
       run: npm install htmlhint
 
     - name: Run HTMLHint
-      run: npx htmlhint "src/**/*.html"
+      run: npx htmlhint "**/*.html"
