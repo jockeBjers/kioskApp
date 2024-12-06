@@ -30,7 +30,8 @@
     margin-bottom: 20px;
 }
 
-.cart-section th, .cart-section td {
+.cart-section th,
+.cart-section td {
     border: 1px solid #ddd;
     padding: 10px;
     text-align: center;
@@ -84,8 +85,33 @@
 }
 
 
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+a.cart {
+    text-decoration: none;
+    border: solid, 2px, black;
+    text-align: center;
+    color: black;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 5px;
+}
+
+.cart:hover {
+    opacity: 60%;
+}
+
+
 @media (max-width: 768px) {
-    .cart-section table, .cart-section th, .cart-section td {
+
+    .cart-section table,
+    .cart-section th,
+    .cart-section td {
         font-size: 0.9rem;
     }
 
@@ -98,100 +124,3 @@
         font-size: 0.9rem;
     }
 }
-
-footer {
-    position: fixed;
-    bottom: 0;
-    background: linear-gradient(to bottom, #0282f2 0%, #99ffcc 100%);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    padding: 15px;
-    width: 100%;
-    text-align: center;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-body {
-margin: auto;
-}
-
-header {
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: rgb(0, 170, 226);
-    color: #000000;
-    width: 100%;
-    padding: 10px 20px;
-    font-size: 12px;
-    text-align: center;
-    display: flex;
-    justify-content: space-around;
-    position:fixed;
-}
-
-header h1 {
-    flex-grow: 1;
-}
-
-#popup h2 {
-    text-align: center
-}
-
-#help {
-    color: #000000;
-    background-color: rgb(0, 170, 226);
-    border: none;
-    font-size: 16px;
-    font-weight: bold;
-    margin-right: 50px;
-}
-
-
-#help:hover {
-    color: rgba(162, 135, 135, 0.166);
-}
-
-#help:active {
-
-    color: rgb(28, 17, 17, 0.166);
-
-}
-
-
-#closeBtn:hover {
-    color: rgb(255, 0, 0, 0.373);
-}
-
-#closeBtn:active {
-    color: rgba(64, 6, 6, 0.373);
-}
-
-
-#closeBtn {
-    border: none;
-    background-color: rgb(47, 45, 45);
-    color: red;
-    font-size: 15px;
-
-}
-
-
-#popup {
-    display: none;
-    flex-direction: column;
-    position: fixed;
-    top: 0;
-    right: 40px;
-    width: 300px;
-    height: 450px;
-    padding: 15px;
-    z-index: 9;
-    background-color: rgb(47, 45, 45);
-    color: #eee;
-    text-align: start;
-    line-height: 1.7;
-    font-size: 12px;
-    border-radius: 5px;
-}
-
-
