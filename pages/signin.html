@@ -6,38 +6,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Student Kiosk</title>
     <link rel="stylesheet" href="../css/signin.css" />
-    <script src="../js/signin.js" defer></script>
+    <link rel="stylesheet" href="../css/global.css">
+    <script src="../js/script.js" defer></script>
+
+    <script src="../js/user.js" defer></script>
+
 </head>
 
 <body>
     <header>
         <h1>Student Kiosk</h1>
-         <div class="header-icons">
-        <!-- help icon-->
-         <button id="help" onclick="helpPopUp()" title="Need help"><img src="../Images/ask.png" alt="Help Icon"></button>     
-        <div id="popup">
-            <h2>How to</h2>
-            <ol>
-                <li>Create an Account</li>
-                <li>First time? "Sign Up" to create an account. Once your account is created, log in using your email and password.</li>
-                <li>Explore the kiosk’s menu within the app. You can navigate through categories like snacks, beverages, or other items available for purchase.</li>
-                <li>Add items to your cart by selecting them and tapping "+" and remove by typing "-".</li>
-                <li>When you’ve selected all the items you want, tap on your cart icon to review your order.</li>
-                <li>Make sure everything is correct, then tap "Checkout".</li>
-                <li>Select Payment Method</li>
-                <li>Pick Up Your Items</li>
+        <div class="header-icons">
+            <!-- help icon-->
+            <button id="help" onclick="helpPopUp()" title="Need help"><img src="../Images/ask.png"
+                    alt="Help Icon"></button>
+            <div id="popup">
+                <h2>How to</h2>
+                <ol>
+                    <li>Create an Account</li>
+                    <li>First time? "Sign Up" to create an account. Once your account is created, log in using your
+                        email and password.</li>
+                    <li>Explore the kiosk’s menu within the app. You can navigate through categories like snacks,
+                        beverages, or other items available for purchase.</li>
+                    <li>Add items to your cart by selecting them and tapping "+" and remove by typing "-".</li>
+                    <li>When you’ve selected all the items you want, tap on your cart icon to review your order.</li>
+                    <li>Make sure everything is correct, then tap "Checkout".</li>
+                    <li>Select Payment Method</li>
+                    <li>Pick Up Your Items</li>
                 </ol>
                 <button id="closeBtn" onclick="closePopUp()">Close</button>
-        </div>  
-        <!-- user icon -->
-        <div id="user">
-          <a href="./signin.html" title="Login">
-          <img src="../Images/user.png" alt="user">
-        </a>
-        </div>   
-      </div> 
-</header>
-<!-- Sign in -->
+            </div>
+            <!-- user icon -->
+            <div id="user">
+                <a href="./signin.html" title="Login">
+                    <img src="../Images/user.png" alt="user">
+                </a>
+            </div>
+        </div>
+    </header>
+    <!-- Sign in -->
 
     <!-- back arrow -->
     <section class="navbar">
@@ -49,31 +56,35 @@
 
     <!-- login -->
     <section class="login">
+        <p id="error-message"></p>
+        <p id="success-message"></p>
         <div class="container">
             <!-- form -->
-            <form>
+            <form id="form">
                 <div class="input-field">
-                    <input id="icon-email" type="email" placeholder="Email">
+                    <input id="email-input" type="email" placeholder="Email">
                 </div>
                 <div class="input-field">
-                    <input id="icon-password" type="password" placeholder="Password">
-                </div>                
+                    <input id="password-input" type="password" placeholder="Password">
+                </div>
+                <div class="summit">
+                    <button type="submit" class="button">Sign in</button>
+                </div>
             </form>
+
             <!-- other -->
             <div class="info">
                 <ul>
-                    <li><a href="#">Forgot password?</a></li>
+                    <li><a href="forgotpassword.html" >Forgot password?</a></li>
                     <li>Don't have an account? <a href="./register.html">Sign up</a></li>
-                </ul>              
+                </ul>
             </div>
-            
-            <div class="summit">
-                <a class="button" href="#">Sign in</a>
-            </div>
+
+
         </div>
     </section>
 
- <!-- login with social media -->
+    <!-- login with social media -->
     <section class="login-with">
 
         <h5>Sign in with</h5>
@@ -106,12 +117,8 @@
             </div>
         </div>
     </section>
-    </div>
-    </div>
-    </div>
-    
-    
-    </body>
+
+</body>
 
 
 </html>
