@@ -5,148 +5,7 @@ body {
     flex-direction: column;
     height: 100vh;
     height: 100svh;
-}
 
-header {
-    height: 80px;
-    background-color: rgb(13, 161, 210);
-    color: #000000;
-    font-size: 12px;
-    display: flex;
-    align-items: center;
-}
-.header-icons{
-    width: 120px;
-    margin-right: 10px;
-}
-
-header h1 {
-    flex-grow: 1;
-    margin-left: 20px;
-}
-
-#popup h2 {
-    text-align: center
-}
-
-#help {
-    color: #000000;
-    background-color: rgb(13, 161, 210);
-    border: none;
-    font-size: 16px;
-    font-weight: bold;
-    border: none;
-}
-
-
-#help:hover {
-    color: rgba(162, 135, 135, 0.166);
-}
-
-#help:active {
-
-    color: rgb(28, 17, 17, 0.166);
-
-}
-
-#closeBtn:hover {
-    color: rgb(255, 0, 0, 0.373);
-}
-
-#closeBtn:active {
-    color: rgba(64, 6, 6, 0.373);
-}
-
-#closeBtn {
-    border: none;
-    background-color: rgb(47, 45, 45);
-    color: red;
-    font-size: 15px;
-}
-
-#popup {
-    display: none;
-    flex-direction: column;
-    position: fixed;
-    top: 0;
-    right: 40px;
-    width: 300px;
-    height: 450px;
-    padding: 15px;
-    z-index: 9;
-    background-color: rgb(47, 45, 45);
-    color: #eee;
-    text-align: center;
-    line-height: 1.7;
-    font-size: 12px;
-    border-radius: 5px;
-
-}
-
-header h1 {
-    flex-grow: 1;
-}
-
-.header-icons {
-    display: flex;
-    gap: 10px;
-    align-items: center;
-}
-
-/* icon*/
-#help {
-    background-color: rgb(13, 161, 210);
-    border: none;
-}
-
-#help:hover,
-#user:hover {
-    opacity: 0.6;
-    cursor: pointer;
-}
-
-#popup h2 {
-    text-align: center
-}
-
-#closeBtn:hover {
-    color: rgb(255, 0, 0, 0.373);
-}
-
-#closeBtn:active {
-    color: rgba(64, 6, 6, 0.373);
-}
-
-
-#closeBtn {
-    border: none;
-    background-color: rgb(47, 45, 45);
-    color: red;
-    font-size: 15px;
-
-}
-
-#popup {
-    display: none;
-    flex-direction: column;
-    position: fixed;
-    top: 0;
-    right: 40px;
-    width: 300px;
-    height: 450px;
-    padding: 15px;
-    z-index: 9;
-    background-color: rgb(47, 45, 45);
-    color: #eee;
-    text-align: start;
-    line-height: 1.7;
-    font-size: 12px;
-    border-radius: 5px;
-}
-
-
-#user {
-    margin-right: 50px;
 }
 
 button.add,
@@ -185,16 +44,6 @@ button.remove {
     color: rgb(37, 35, 35);
 }
 
-footer {
-    height: 80px;
-    background: linear-gradient(to bottom, #0282f2 0%, #99ffcc 100%);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    padding-inline: 15px;
-    text-align: center;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
 
 .cart {
     font-size: 22px;
@@ -246,8 +95,8 @@ main {
     justify-content: center;
     gap: 20px;
     align-items: center;
-    height:100%;
-    padding:40px;
+    height: 100%;
+    padding: 40px;
 }
 
 .product {
@@ -284,7 +133,6 @@ main {
 
 .toggle-buttons {
     flex: 1;
-
     font-size: 28px;
     padding: 15px;
     border: none;
@@ -302,15 +150,15 @@ main {
 
 
 .product img {
-    padding:10px;
-    width: 150px;  
-    height: 150px; 
-    object-fit: contain; 
+    padding: 10px;
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
 }
 
 #clearCart {
     border: solid, 2px, black;
-    background: linear-gradient(to bottom, #0282f2 0%, #99ffcc 100%);
+    background: linear-gradient(to bottom, #0c7295 0%, #edf3f0 100%);
     text-align: center;
     color: black;
     padding: 5px 10px;
