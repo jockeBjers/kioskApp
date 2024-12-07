@@ -1,4 +1,4 @@
-name: Lint HTML
+name: Lint HTML and JavaScript
 
 on:
   push:
@@ -8,9 +8,8 @@ on:
     branches:
       - main
 
-
 jobs:
-  html-lint:
+  lint:
     runs-on: ubuntu-latest
 
     steps:
@@ -22,8 +21,17 @@ jobs:
       with:
         node-version: '16'
 
+    
     - name: Install HTMLHint
       run: npm install htmlhint
 
     - name: Run HTMLHint
       run: npx htmlhint "**/*.html"
+
+    
+    - name: Install ESLint
+      run: npm install eslint
+
+    - name: Run ESLint
+      run: npx eslint "**/*.js"
+
