@@ -19,7 +19,7 @@ jobs:
     - name: Install Node.js
       uses: actions/setup-node@v3
       with:
-        node-version: '16'
+        node-version: '20'
 
     
     - name: Install HTMLHint
@@ -29,9 +29,9 @@ jobs:
       run: npx htmlhint "**/*.html"
 
     
-    - name: Install ESLint
-      run: npm install eslint
+    - name: Install ESLint and Compatibility
+      run: |
+        npm install eslint @eslint/eslintrc
 
     - name: Run ESLint
       run: npx eslint "**/*.js"
-
