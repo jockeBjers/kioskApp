@@ -1,28 +1,27 @@
-name: Lint JavaScript
-
 on:
-  push:
-    branches:
-      - main
   pull_request:
     branches:
       - main
 
 jobs:
-  lint-js:
+  JavaScript-lint:
+    name: Validate js
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
 
     steps:
-    - name: Checkout Code
-      uses: actions/checkout@v3
+      - name: Checkout code
+        uses: actions/checkout@v4
 
-    - name: Install Node.js
-      uses: actions/setup-node@v3
-      with:
-        node-version: '16'
+      - name: Install ESLint
+        run: |
+          npm install eslint@8.10.0
 
-    - name: Install Dependencies
-      run: npm install
-
-    - name: Run ESLint
-      run: npx eslint "src/**/*.js"
+      - name: Run ESLint
+        env:
+          SARIF_ESLINT_IGNORE_SUPPRESSED: "true"
+        run: npx eslint .
+          --config .eslintrc.js
+          --ext .js,.jsx,.ts,.tsx
+        continue-on-error: false
