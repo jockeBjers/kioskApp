@@ -1,12 +1,12 @@
 {
-  "name": "kioskapp",
-  "version": "1.0.0",
-  "description": "School project with the goal to work together in a scrum team.",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
-}
+    "name": "kioskApp",
+    "version": "1.0.0",
+    "type": "module",
+    "scripts": {
+      "lint": "eslint \"**/*.js\""
+    },
+    "devDependencies": {
+      "eslint": "^9.16.0"
+    }
+  }
+  

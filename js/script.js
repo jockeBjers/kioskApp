@@ -65,7 +65,7 @@ function removeFromCart(productID) {
 
     const removedProduct = cart.splice(productIndex, 1)[0];
     localStorage.setItem('cart', JSON.stringify(cart));
-    alert(`${removedProduct.name} removed from the cart!`)
+    alert(`${removedProduct.name} removed from the cart!`);
     updateTotalValue();
     updateTotalItems();
 }
@@ -119,8 +119,8 @@ document.querySelectorAll(".add").forEach((button, index) => {
             removeBtn.style.visibility = "visible";
             localStorage.setItem(`removeBtnVisible${index}`, "true");
         }
-    })
-})
+    });
+});
 
 
 
