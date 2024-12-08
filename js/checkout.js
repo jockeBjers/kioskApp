@@ -1,35 +1,49 @@
 function renderCart() {
+    const isMobileView = window.innerWidth <= 768;
     const cartTableBody = document.querySelector('#cartTable tbody');
-    const cartTotalElement = document.getElementById('cartTotal');
+    const cartItemsMobile = document.querySelector('.cart-items-mobile');
 
-    // Clear the table body
     cartTableBody.innerHTML = '';
+    cartItemsMobile.innerHTML = '';
 
     let total = 0;
 
-    cart.forEach((item, index) => {
-        const row = document.createElement('tr');
-        const itemTotal = item.price * item.quantity;
+    cart.forEach(item => {
+        total += item.price * item.quantity;
 
-        row.innerHTML = `
-            <td><img src="${item.img}" alt="${item.name}" style="width: 50px; height: auto;"> ${item.name}</td>
-            <td>${item.price.toFixed(2)} Kr</td>
-            <td>
-                <input type="number" min="1" value="${item.quantity}" onchange="updateQuantity(${index}, this.value)">
-            </td>
-            <td>${itemTotal.toFixed(2)} Kr</td>
-            <td><button onclick="removeFromCart(${item.id})">Remove</button></td>
-        `;
-        cartTableBody.appendChild(row);
-        total += itemTotal;
+        if (isMobileView) {
+            const itemDiv = document.createElement('div');
+            itemDiv.classList.add('cart-item');
+            itemDiv.innerHTML = `
+                <img src="${item.img}" alt="${item.name}" />
+                <div class="item-details">
+                    <p>${item.name}</p>
+                    <p>${item.price.toFixed(2)} Kr</p>
+                    <input type="number" min="1" value="${item.quantity}" onchange="updateQuantity(${item.id}, this.value)" />
+                    <button onclick="removeFromCart(${item.id})">Remove</button>
+                </div>
+            `;
+            cartItemsMobile.appendChild(itemDiv);
+        } else {
+            const row = document.createElement('tr');
+            row.innerHTML = `
+                <td><img src="${item.img}" alt="${item.name}" /></td>
+                <td>${item.name}</td>
+                <td>${item.price.toFixed(2)} Kr</td>
+                <td>
+                    <input type="number" min="1" value="${item.quantity}" onchange="updateQuantity(${item.id}, this.value)">
+                </td>
+                <td>${(item.price * item.quantity).toFixed(2)} Kr</td>
+                <td><button onclick="removeFromCart(${item.id})">Remove</button></td>
+            `;
+            cartTableBody.appendChild(row);
+        }
     });
 
-    cartTotalElement.textContent = `Total: ${total.toFixed(2)} Kr`;
-
-    if (cart.length === 0) {
-        cartTableBody.innerHTML = `<tr><td colspan="5">Your cart is empty.</td></tr>`;
-    }
+    document.getElementById('cartTotal').textContent = `Total: ${total.toFixed(2)} Kr`;
 }
+
+
 
 
 function updateQuantity(index, newQuantity) {
@@ -53,5 +67,6 @@ function checkoutCart() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+    cart = JSON.parse(localStorage.getItem('cart')) || [];
     renderCart();
 });
