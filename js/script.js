@@ -48,26 +48,27 @@ function addToCart(productID) {
 
 
 function removeFromCart(productID) {
-    const productIndex = cart.findIndex(p => p.id === productID);
-    if (productIndex === -1) {
-        const product = products.find(p => p.id === productID);
-        const productName = product ? product.name : 'This product';
-        alert(`${productName} is not in the cart!`);
+    const cartItem = cart.find(item => item.id === productID);
+
+    if (!cartItem) {
+        alert('This product is not in the cart!');
         return;
     }
-
-    if (productIndex === 0) {
-        document.querySelectorAll(".remove").forEach((removeBtn, index) => {
-            removeBtn.style.visibility = "hidden";
-            localStorage.removeItem(`removeBtnVisible${index}`);
-        });
+    if (cartItem.quantity > 1) {
+        cartItem.quantity -= 1;
+    } else {
+        const productIndex = cart.indexOf(cartItem);
+        cart.splice(productIndex, 1);
     }
 
-    const removedProduct = cart.splice(productIndex, 1)[0];
+
     localStorage.setItem('cart', JSON.stringify(cart));
-    alert(`${removedProduct.name} removed from the cart!`);
+
+
     updateTotalValue();
     updateTotalItems();
+    renderCart();
+    alert(`${removedProduct.name} removed from the cart!`);
 }
 
 
@@ -83,7 +84,7 @@ function updateTotalValue() {
     document.getElementById('totalValue').textContent = `Total: ${total.toFixed(2)} Kr`;
 }
 function updateTotalItems() {
-    const totalItems = cart.length;
+    const totalItems = cart.reduce((sum, product) => sum + product.quantity, 0);
     document.getElementById('totalItems').textContent = `Antal: ${totalItems} st`;
 }
 document.addEventListener('DOMContentLoaded', () => {

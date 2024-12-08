@@ -2,11 +2,7 @@ function renderCart() {
     const cartTableBody = document.querySelector('#cartTable tbody');
     const cartTotalElement = document.getElementById('cartTotal');
 
-    // Hämta kundvagnen från Local Storage
-    const storedCart = JSON.parse(localStorage.getItem('cart')) || [];
-    cart = storedCart;
-
-    // Töm tabellen
+    // Clear the table body
     cartTableBody.innerHTML = '';
 
     let total = 0;
@@ -16,7 +12,7 @@ function renderCart() {
         const itemTotal = item.price * item.quantity;
 
         row.innerHTML = `
-            <td><img src="${item.image}" alt="${item.name}" style="width: 50px; height: auto;"> ${item.name}</td>
+            <td><img src="${item.img}" alt="${item.name}" style="width: 50px; height: auto;"> ${item.name}</td>
             <td>${item.price.toFixed(2)} Kr</td>
             <td>
                 <input type="number" min="1" value="${item.quantity}" onchange="updateQuantity(${index}, this.value)">
@@ -30,13 +26,10 @@ function renderCart() {
 
     cartTotalElement.textContent = `Total: ${total.toFixed(2)} Kr`;
 
-    // Visa ett meddelande om kundvagnen är tom
     if (cart.length === 0) {
         cartTableBody.innerHTML = `<tr><td colspan="5">Your cart is empty.</td></tr>`;
     }
 }
-
-
 
 
 function updateQuantity(index, newQuantity) {
