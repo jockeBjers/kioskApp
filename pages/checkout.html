@@ -47,7 +47,7 @@
   <main class="checkout-container">
     <section class="cart-section">
       <h2>Your Cart</h2>
-      <div class="cart-items">
+      <div class="desktop-cart-container">
         <table id="cartTable">
           <thead>
             <tr>
@@ -59,20 +59,14 @@
             </tr>
           </thead>
           <tbody>
+            <!-- Dynamiskt innehåll här -->
           </tbody>
         </table>
       </div>
 
-      <div class="cart-items-mobile">
-        <div class="cart-item" id="cart-item-${item.id}">
-          <img src="${item.img}" alt="${item.name}" />
-          <div class="item-details">
-            <p>${item.name}</p>
-            <p>${item.price.toFixed(2)} Kr</p>
-            <input type="number" min="1" value="${item.quantity}" onchange="updateQuantity($itemid, this.value)" />
-            <button onclick="removeFromCart($itemid)">Remove</button>
-          </div>
-        </div>
+
+      <div class="mobile-cart-container" style="display: none;">
+        <!-- Dynamiskt innehåll för mobilvy här -->
       </div>
 
       <div class="checkout-summary">
