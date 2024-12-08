@@ -69,8 +69,8 @@
           <div class="item-details">
             <p>${item.name}</p>
             <p>${item.price.toFixed(2)} Kr</p>
-            <input type="number" min="1" value="${item.quantity}" onchange="updateQuantity(${item.id}, this.value)" />
-            <button onclick="removeFromCart(${item.id})">Remove</button>
+            <input type="number" min="1" value="${item.quantity}" onchange="updateQuantity($itemid, this.value)" />
+            <button onclick="removeFromCart($itemid)">Remove</button>
           </div>
         </div>
       </div>
