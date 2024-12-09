@@ -23,6 +23,8 @@ const products = [
     { id: 22, name: 'Åsna', img: './Images/Donkey.png', price: 8599.00, category: 'snacks' }
 ];
 
+
+
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
 printProducts();
@@ -59,12 +61,16 @@ function removeFromCart(productID) {
     } else {
         const productIndex = cart.indexOf(cartItem);
         cart.splice(productIndex, 1);
+
+        const removeBtn = document.querySelector(`.remove[onclick="removeFromCart(${productID})"]`);
+        if (removeBtn) {
+            removeBtn.style.visibility = 'hidden';
+            const buttonIndex = [...document.querySelectorAll(".remove")].indexOf(removeBtn);
+            localStorage.removeItem(`removeBtnVisible${buttonIndex}`);
+        }
     }
 
-
     localStorage.setItem('cart', JSON.stringify(cart));
-
-
     updateTotalValue();
     updateTotalItems();
     renderCart();
