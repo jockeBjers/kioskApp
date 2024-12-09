@@ -42,6 +42,7 @@ form.addEventListener('submit', (e) => {
         }
         else if(email_input && password_input){
             success_message.innerText = 'Login successful!';
+            window.location.href = "../index.html";
         }
         else {
             success_message.innerText = 'Password reset instructions sent successfully!';
