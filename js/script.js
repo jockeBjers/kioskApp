@@ -43,7 +43,6 @@ function addToCart(productID) {
 
 
     localStorage.setItem('cart', JSON.stringify(cart));
-    alert(`${product.name} added to the cart!`);
     updateTotalValue();
     updateTotalItems();
 }
@@ -53,7 +52,6 @@ function removeFromCart(productID) {
     const cartItem = cart.find(item => item.id === productID);
 
     if (!cartItem) {
-        alert('This product is not in the cart!');
         return;
     }
     if (cartItem.quantity > 1) {
@@ -73,8 +71,6 @@ function removeFromCart(productID) {
     localStorage.setItem('cart', JSON.stringify(cart));
     updateTotalValue();
     updateTotalItems();
-    renderCart();
-    alert(`${removedProduct.name} removed from the cart!`);
 }
 
 
@@ -101,7 +97,6 @@ document.addEventListener('DOMContentLoaded', () => {
 function clearCart() {
     cart = [];
     localStorage.removeItem('cart');
-    alert('Cart is now empty');
     updateTotalItems();
     updateTotalValue();
 
