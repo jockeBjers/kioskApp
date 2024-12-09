@@ -81,6 +81,22 @@ function closePopUp() {
     document.getElementById("popup").style.display = "none";
 }
 
+function userPopUp() {
+    document.getElementById('userPopup').style.display = 'flex';
+}
+
+function closeUserPopUp() {
+    document.getElementById('userPopup').style.display = 'none';
+}
+
+const username = "JohnDoe";
+const email = "johndoe@example.com";
+
+document.querySelector("#userPopup ul").innerHTML = `
+  <li><strong>Username:</strong> ${username}</li>
+  <li><strong>Email:</strong> ${email}</li>
+`;
+
 function updateTotalValue() {
     const total = cart.reduce((sum, product) => sum + product.price * product.quantity, 0);
     document.getElementById('totalValue').textContent = `Total: ${total.toFixed(2)} Kr`;
