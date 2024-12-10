@@ -23,6 +23,8 @@ const products = [
     { id: 22, name: 'Åsna', img: './Images/Donkey.png', price: 8599.00, category: 'snacks' }
 ];
 
+
+
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
 printProducts();
@@ -41,31 +43,32 @@ function addToCart(productID) {
 
 
     localStorage.setItem('cart', JSON.stringify(cart));
-    alert(`${product.name} added to the cart!`);
     updateTotalValue();
     updateTotalItems();
 }
 
 
 function removeFromCart(productID) {
-    const productIndex = cart.findIndex(p => p.id === productID);
-    if (productIndex === -1) {
-        const product = products.find(p => p.id === productID);
-        const productName = product ? product.name : 'This product';
-        alert(`${productName} is not in the cart!`);
+    const cartItem = cart.find(item => item.id === productID);
+
+    if (!cartItem) {
         return;
     }
+    if (cartItem.quantity > 1) {
+        cartItem.quantity -= 1;
+    } else {
+        const productIndex = cart.indexOf(cartItem);
+        cart.splice(productIndex, 1);
 
-    if (productIndex === 0) {
-        document.querySelectorAll(".remove").forEach((removeBtn, index) => {
-            removeBtn.style.visibility = "hidden";
-            localStorage.removeItem(`removeBtnVisible${index}`);
-        });
+        const removeBtn = document.querySelector(`.remove[onclick="removeFromCart(${productID})"]`);
+        if (removeBtn) {
+            removeBtn.style.visibility = 'hidden';
+            const buttonIndex = [...document.querySelectorAll(".remove")].indexOf(removeBtn);
+            localStorage.removeItem(`removeBtnVisible${buttonIndex}`);
+        }
     }
 
-    const removedProduct = cart.splice(productIndex, 1)[0];
     localStorage.setItem('cart', JSON.stringify(cart));
-    alert(`${removedProduct.name} removed from the cart!`)
     updateTotalValue();
     updateTotalItems();
 }
@@ -78,12 +81,28 @@ function closePopUp() {
     document.getElementById("popup").style.display = "none";
 }
 
+function userPopUp() {
+    document.getElementById('userPopup').style.display = 'flex';
+}
+
+function closeUserPopUp() {
+    document.getElementById('userPopup').style.display = 'none';
+}
+
+const username = "JohnDoe";
+const email = "johndoe@example.com";
+
+document.querySelector("#userPopup ul").innerHTML = `
+  <li><strong>Username:</strong> ${username}</li>
+  <li><strong>Email:</strong> ${email}</li>
+`;
+
 function updateTotalValue() {
     const total = cart.reduce((sum, product) => sum + product.price * product.quantity, 0);
     document.getElementById('totalValue').textContent = `Total: ${total.toFixed(2)} Kr`;
 }
 function updateTotalItems() {
-    const totalItems = cart.length;
+    const totalItems = cart.reduce((sum, product) => sum + product.quantity, 0);
     document.getElementById('totalItems').textContent = `Antal: ${totalItems} st`;
 }
 document.addEventListener('DOMContentLoaded', () => {
@@ -94,7 +113,6 @@ document.addEventListener('DOMContentLoaded', () => {
 function clearCart() {
     cart = [];
     localStorage.removeItem('cart');
-    alert('Cart is now empty');
     updateTotalItems();
     updateTotalValue();
 
@@ -119,8 +137,8 @@ document.querySelectorAll(".add").forEach((button, index) => {
             removeBtn.style.visibility = "visible";
             localStorage.setItem(`removeBtnVisible${index}`, "true");
         }
-    })
-})
+    });
+});
 
 
 

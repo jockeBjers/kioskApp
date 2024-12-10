@@ -23,21 +23,29 @@ form.addEventListener('submit', (e) => {
             password_input.value,
             confirm_password_input.value
         );
-    } else {
+    }
+    else if (email_input && password_input) {
         errors = getLoginFormErrors(email_input.value, password_input.value);
+    }
+    else {
+        errors = forgotPasswordFormErrors(email_input.value);
     }
 
     if (errors.length > 0) {
         e.preventDefault();
         error_message.innerText = errors.join('. ');
-    }else{
+    } else {
         e.preventDefault();
-        if (firstname_input && lastname_input && username_input){
-            
-        success_message.innerText = 'Account successfully created!';
+        if (firstname_input && lastname_input && username_input) {
+
+            success_message.innerText = 'Account successfully created!';
         }
-        else{
+        else if(email_input && password_input){
             success_message.innerText = 'Login successful!';
+            window.location.href = "../index.html";
+        }
+        else {
+            success_message.innerText = 'Password reset instructions sent successfully!';
         }
 
         allInputs.forEach(input => {
@@ -90,6 +98,15 @@ function getLoginFormErrors(email, password) {
     return errors;
 }
 
+function forgotPasswordFormErrors(email) {
+    let errors = [];
+    if (email === '' || email == null) {
+        errors.push('Email is required');
+        email_input.parentElement.classList.add('incorrect');
+    }
+    return errors;
+}
+
 const allInputs = [
     firstname_input,
     lastname_input,
@@ -103,7 +120,7 @@ allInputs.forEach(input => {
     input.addEventListener('input', () => {
         if (input.parentElement.classList.contains('incorrect')) {
             input.parentElement.classList.remove('incorrect');
-            error_message.innerText ='';
+            error_message.innerText = '';
             success_message.innerText = '';
         }
     });

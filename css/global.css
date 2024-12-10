@@ -20,42 +20,63 @@ header h1 {
     margin-left: 20px;
 }
 
-#popup h2 {
+#popup h2,
+.popup h2 {
     text-align: center
 }
 
-#closeBtn:hover {
+.popup ul {
+    list-style: none;
+}
+
+#closeBtn:hover,
+#userClosebtn:hover {
     color: rgb(255, 0, 0, 0.373);
 }
 
-#closeBtn:active {
+#closeBtn:active,
+#userClosebtn:active {
     color: rgba(64, 6, 6, 0.373);
 }
 
-#closeBtn {
+#closeBtn,
+#userClosebtn {
     border: none;
     background-color: rgb(47, 45, 45);
     color: red;
     font-size: 15px;
 }
 
-#popup {
+#popup,
+.popup {
     display: none;
     flex-direction: column;
     position: fixed;
     top: 0;
     right: 40px;
     width: 300px;
-    height: 450px;
     padding: 15px;
     z-index: 9;
-    background-color: rgb(47, 45, 45);
+    background-color: rgba(47, 45, 45, 0.788);
+    backdrop-filter: blur(5px);
     color: #eee;
     text-align: start;
     line-height: 1.7;
     font-size: 12px;
     border-radius: 5px;
 
+}
+
+.logOutbtn{
+text-decoration: none;
+background-color: rgba(47, 45, 45, 0.788);
+border:none;
+margin:5px;
+margin-bottom: 40px;
+color:white;
+width:30%;
+align-self: center;
+text-align: center;
 }
 
 .header-icons {
@@ -66,7 +87,8 @@ header h1 {
 }
 
 /* icon*/
-#help {
+#help,
+#user {
     background-color: #0c7295;
     border: none;
 }
