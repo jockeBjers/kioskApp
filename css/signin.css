@@ -1,0 +1,204 @@
+/* General */
+body {
+   margin: 0;
+   font-family: Arial, Helvetica, sans-serif;
+   color: #888;
+   background: #fff;
+}
+
+.container {
+   margin: 0 auto;
+   padding: 0 36px;
+}
+
+button {
+   width: auto;
+}
+
+a {
+   text-decoration: none;
+}
+
+
+/* Navbar */
+.navbar {
+   background: #3f51b4;
+   padding: 20px 0;
+}
+
+.navbar a:hover {
+   opacity: 0.6;
+   cursor: pointer;
+}
+
+.navbar span {
+   margin-right: 24px;
+   color: #fff;
+   font-size: 18px;
+}
+
+/* Login Section */
+.login {
+   background-color: #fff;
+   padding: 0;
+   border-radius: 3px;
+}
+
+.input-field {
+   position: relative;
+   margin: 1rem 0;
+}
+
+form input {
+   display: block;
+   border: 1px solid #9e9e9e;
+   width: 100%;
+   padding: 10px;
+   font-size: 14px;
+   margin-bottom: 15px;
+   border-radius: 3px;
+   box-sizing: border-box;
+}
+
+input:hover {
+   border-color: #3f51b4;
+   box-shadow: 0 0 5px rgba(2, 130, 242, 0.5);
+   transition: all 0.3s ease;
+}
+
+input:focus {
+   border-color: #004bb5;
+   box-shadow: 0 0 8px rgba(0, 75, 181, 0.8);
+   outline: none;
+   background-color: #f0f8ff;
+}
+
+.submit {
+
+   margin-top: 15px;
+   text-align: center;
+}
+
+.submit .button {
+   display: inline-block;
+   width: 100%;
+   background-color: #3f51b4;
+   color: #fff;
+   border: none;
+   padding: 10px 0;
+   border-radius: 3px;
+   font-size: 14px;
+   cursor: pointer;
+}
+
+.submit .button:hover {
+   opacity: 0.8;
+}
+
+.submit .button:active {
+
+   color: #3f51b4;
+   background-color: #fff;
+}
+
+/* Additional Info Links */
+.info ul {
+   padding: 0;
+   list-style: none;
+}
+
+.info ul li {
+   padding-bottom: 16px;
+}
+
+.info ul li a {
+   color: #3f51b4;
+   font-weight: bold;
+}
+
+.info ul li a:hover {
+   text-decoration: underline;
+   color: #dd4b39;
+}
+
+.info ul li a:active {
+   color: #3f51b4;
+}
+
+
+/* Social Login Buttons */
+.login-with {
+   text-align: center;
+   margin: 20px 0;
+}
+
+.login-with .row {
+   display: flex;
+   justify-content: center;
+   gap: 40px;
+   flex-wrap: wrap;
+}
+
+.login-with .col-50 {
+   flex: 0 1 calc(50% - 20px);
+   box-sizing: border-box;
+   max-width: 50%;
+}
+
+.login-with h5 {
+   font-size: 20px;
+   color: #333;
+   margin-bottom: 15px;
+   text-align: center;
+}
+
+.login-with .button {
+   width: 100%;
+   color: #fff;
+   border: none;
+   border-radius: 3px;
+   padding: 8px 10px;
+   font-size: 14px;
+   cursor: pointer;
+   text-align: center;
+   margin-bottom: 10px;
+}
+
+.login-with .button:hover {
+   opacity: 0.8;
+}
+
+.login-with .button:active {
+   color: #3f51b4;
+   background-color: #fff;
+}
+
+.button-facebook {
+   background: #3b5999;
+}
+
+.button-twitter {
+   background: #55acee;
+}
+
+.button-linkedin {
+   background: #0077B5;
+}
+
+.button-google {
+   background: #dd4b39;
+}
+
+.incorrect input {
+   border-color: red;
+}
+
+#error-message {
+   text-align: center;
+   color: red;
+}
+
+#success-message {
+   text-align: center;
+   color: green;
+}
