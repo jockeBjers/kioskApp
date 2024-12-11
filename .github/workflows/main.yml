@@ -21,17 +21,32 @@ jobs:
       with:
         node-version: '20'
 
-    
     - name: Install HTMLHint
       run: npm install htmlhint
 
     - name: Run HTMLHint
       run: npx htmlhint "**/*.html"
 
-    
     - name: Install ESLint and Compatibility
       run: |
         npm install eslint @eslint/eslintrc
 
     - name: Run ESLint
       run: npx eslint "**/*.js"
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: lint  
+    if: ${{ github.ref == 'refs/heads/main' }}  
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./
+
+
